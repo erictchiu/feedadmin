@@ -1,0 +1,251 @@
+a:2:{s:7:"headers";a:8:{s:4:"date";s:29:"Wed, 24 Nov 2010 05:43:27 GMT";s:6:"server";s:22:"Apache/2.2.3 (Red Hat)";s:10:"set-cookie";s:44:"PHPSESSID=55q04chn2q72vfjqikttcos3n6; path=/";s:7:"expires";s:29:"Thu, 19 Nov 1981 08:52:00 GMT";s:13:"cache-control";s:7:"private";s:6:"pragma";s:8:"no-cache";s:10:"connection";s:5:"close";s:12:"content-type";s:24:"text/html; charset=UTF-8";}s:4:"body";s:13615:"<!-- 
+www.postlets.com
+HTTP_HOST = www.postlets.com
+HTTP_USER_AGENT = SimplePie/1.0 (Feed Parser; http://simplepie.org/; Allow like Gecko) Build/20070715235228
+HTTP_ACCEPT_ENCODING = gzip,deflate
+HTTP_X_FORWARDED_FOR = 127.0.0.1
+HTTP_CONNECTION = Close
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="description" content="Use Postlets to create real estate listings for sale and for rent and distribute to search engines, classifieds site, social media websites.">
+<meta name="keywords" content="syndication, real estate, homes for sale, homes, home, houses for sale, new homes for sale, real estate for sale, real estate listings, apartments, rent, apartments for rent, homes for rent, houses for rent, real estate for rent, rentals">
+<title>Postlets | Free Listing Syndication and Real Estate Marketing Tools</title>
+<link href="../css/stylesj.css" rel="stylesheet" type="text/css" media="all">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="shortcut icon" href="http://www.postlets.com/favicon.ico" type="image/x-icon">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+
+<table width="728" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td width="310" valign="top" bgcolor="#FFFFFF"><a href="../home.php"><img src="../images/postlets_logo.gif" alt="Postlets" width="310" height="80" border="0"></a></td>
+    <td valign="top"> 
+        <table width="100%" cellspacing="0" cellpadding="3">
+          <tr>
+          	<td height="40" align="right" class="meddkgray"> Real Estate Marketing for Web 2.0</td>
+          </tr>
+          <tr>
+          </tr>
+          <tr>  
+          	<td height="40" align="right" valign="middle" bgcolor="#FFFFFF">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td height="33" align="right" valign="bottom">
+            <span class="tiny">
+            <form name="login" method="post" action="../login_now.php">
+            <label>USERNAME: </label>
+          	<input name="username" type="text" id="username" size="11">&nbsp;
+          	<label>PASSWORD: </label>
+            <input name="user_pass" type="password" id="user_pass" size="11">
+            <input type="submit" name="Submit" value="LOGIN" class="btn">&nbsp;
+            </form>
+            </span>
+                </td>
+              </tr>
+            </table>
+            </td>
+                      </tr>
+        </table>
+    </td>
+</table><table width="728" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td>
+	<ul class="solidblockmenu">
+					<li><a href="../info/postlets.php">Features</a></li>
+						<li><a href="../signup.php">Sign Up</a></li>
+							<li><a href="../info/help.php">Help</a></li>
+		    </ul>
+    <br style="clear: left" />
+    </td>
+    <td align="right" valign="top">
+        	<span class="small">Not a member? <a href="../signup.php">Set up a FREE account.</a> | <a href="../forgotpassword.php">Forgot your password?</a>&nbsp;&nbsp;        </span>
+    </td>
+  </tr>
+</table><title>POSTLETS | free classified ad creation and syndication for real estate, rentals, cars and trucks</title>
+
+<table width="728" border="0" cellspacing="8" cellpadding="0" bgcolor="#FF7500" align="center">
+  <tr> 
+    <td colspan="3">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FF7500">
+        <tr>
+          <td><a href="signup.php"><img src="images/welcomemat_sml2.gif" alt="Welcome to Postlets" width="472" height="180" border="0"></a></td>
+		  <td bgcolor="#666666" valign="top" width=425>
+			<table border=0 cellpadding=6 cellspacing=0>
+			<tr height=105><td class="bigwhite">Want to turn your property listing into a showcase website?</td></tr>
+			<tr>
+			  <td class="bigwhite">Try <a href="info/pro.php">Postlets PRO</a>.<br />Just $10 or less.</td>
+			</tr>
+			</table></td>
+		</tr>
+	  </table></td>
+  </tr>
+  <tr>
+  	<td bgcolor="#FF7500" valign="top">
+      <table bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" height="400" width="100%">
+        <tr> 
+          <td valign="top" height="14" align="left"><img src="images/roundcorner_topleft.gif" width="11" height="14" border="0"></td>
+          <td valign="top" height="14" align="right"><img src="images/roundcorner_topright.gif" width="11" height="14" border="0"></td>
+        </tr>
+        <tr> 
+          <td valign="top" colspan="2" class="big2">FIVE SIMPLE STEPS TO POST YOUR  LISTING<br>
+            <img src="images/rule_dot_orange_208.gif" width="208" height="2" vspace="8"> 
+
+            <table width="98%" cellpadding="0" cellspacing="3" border="0">
+              <tr> 
+                <td height="52" valign="middle"><img src="images/easy_1.gif" alt="Step 1" width="25" height="27" vspace="5"/></td>
+                <td height="52" valign="middle" class="med2">Set up a FREE account</td>
+              </tr>
+              <tr> 
+                <td height="52" valign="middle"><img src="images/easy_2.gif" alt="Step 2" width="25" height="27" vspace="5" /> 
+                <td height="52" valign="middle" class="med2">Create your listing using easy-to-use forms</td>
+              </tr>
+              <tr> 
+                <td height="52" valign="middle"><img src="images/easy_3.gif" alt="Step 3" width="25" height="27" vspace="5" /></td>
+                <td height="52" valign="middle" class="med2">Post your listing on classifieds sites using our HTML code</td>
+              </tr>
+              <tr> 
+                <td height="52" valign="middle"><img src="images/easy_4.gif" alt="Step 4" width="25" height="27" vspace="5" /></td>
+                <td height="52" valign="middle" class="med2">Share your listing on social media sites with a couple of clicks</td>
+              </tr>
+              <tr> 
+                <td height="52" valign="middle"><img src="images/easy_5.gif" alt="Step 5" width="25" height="27" vspace="5" /></td>
+                <td height="52" valign="middle" class="med2">We automatically 
+                syndicate your listing to several search sites</td>
+              </tr>
+              <tr>
+                <td height="35" colspan="2" valign="bottom" align="center" class="big"><a href="info/postlets.php"><img border=0 src="images/learn_more.gif"></a></td>
+              </tr>
+            </table>
+          </td>
+        <tr> 
+          <td height="14" align="left" valign="bottom"><img src="images/roundcorner_btmleft.gif" width="11" height="14" valign="bottom"></td>
+          <td height="14" align="right" valign="bottom"><img src="images/roundcorner_btmright.gif" width="11" height="14" valign="bottom"></td>
+        </tr>
+      </table>
+    </td>
+   	<td bgcolor="#FF7500" valign="top">
+      <table bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" height="400" width="100%">
+        <tr> 
+          <td valign="top" height="14" align="left"><img src="images/roundcorner_topleft.gif" width="11" height="14" border="0"></td>
+          <td valign="top" height="14" align="right"><img src="images/roundcorner_topright.gif" width="11" height="14" border="0"></td>
+        </tr>
+        <tr> 
+          <td valign="top" colspan="2" class="big2">GET YOUR LISTING ON THESE SITES AND MORE<br>
+            <img src="images/rule_dot_orange_208.gif" width="208" height="2" vspace="8"><br>
+            <table width="98%" cellpadding="0" cellspacing="3" border="0">
+              
+	<tr> 
+                <td width="25" height="25" valign="middle"><img src="images/favicons/facebook_icon.gif" alt="Facebook" /></td>
+                <td height="25" valign="middle"><a href="http://www.facebook.com" target="_blank" class="big">Facebook</a></td>
+              </tr>
+              <tr>
+                <td height="25" valign="middle"><img src="images/favicons/frontdoor_icon.gif" alt="Frontdoor" /></td>
+                <td height="25" valign="middle"><a href="http://www.frontdoor.com" target="_blank" class="big">FrontDoor</a></td>
+              </tr>
+              
+              <tr> 
+                <td height="25" valign="middle"><img src="images/favicons/googlebase_icon.gif" alt="Google Base" width="16" height="16" /></td>
+                <td height="25" valign="middle"><a href="http://base.google.com" target="_blank" class="big">Google 
+                  Base</a></td>
+              </tr>
+              <tr> 
+                <td height="25" valign="middle"><img src="images/favicons/hotpads_icon.gif" alt="HotPads" width="16" height="16" /></td>
+                <td height="25" valign="middle"><a href="http://www.hotpads.com" target="_blank" class="big">HotPads</a></td>
+              </tr>
+              
+              <tr>
+                <td height="25" valign="middle"><img src="images/favicons/myspace_icon.gif" alt="MySpace" width="16" height="16" /></td>
+                <td height="25" valign="middle"><a href="http://www.myspace.com" target="_blank" class="big">MySpace</a></td>
+              </tr>
+              <tr>
+                <td height="25" valign="middle"><img src="images/favicons/oodle_icon.gif" alt="Oodle" /></td>
+                <td height="25" valign="middle"><a href="http://www.oodle.com" target="_blank" class="big">Oodle</a></td>
+              </tr>
+              <tr> 
+                <td height="25" valign="middle"><img src="images/favicons/trulia_icon.gif" alt="Trulia" width="16" height="16" /></td>
+                <td height="25" valign="middle"><a href="http://www.trulia.com" target="_blank" class="big">Trulia</a></td>
+              </tr>
+              <tr>
+                <td height="25" valign="middle"><img src="images/favicons/twitter_icon.gif" alt="Twitter" /></td>
+                <td height="25" valign="middle"><a href="http://www.twitter.com" target="_blank" class="big">Twitter</a></td>
+              </tr>
+              <tr>
+                <td height="25" valign="middle"><img src="images/favicons/vast_icon.gif" alt="Vast" width="16" height="16" /></td>
+                <td height="25" valign="middle"><a href="http://www.vast.com" target="_blank" class="big">Vast</a></td>
+              </tr>
+              <tr> 
+                <td height="25" valign="middle"><img src="images/favicons/zillow_icon.gif" alt="Zillow" /></td>
+                <td height="25" valign="middle"><a href="http://www.zillow.com" target="_blank" class="big">Zillow</a></td>
+              </tr>
+              
+              
+              <tr> 
+                <td height="25" valign="middle"></td>
+                <td height="25" valign="middle"><a href="http://www.postlets.com/info/postlets2.php" target="_parent" class="big">plus 
+                  more...</a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="bottom" height="14" align="left"><img src="images/roundcorner_btmleft.gif" width="11" height="14" valign="bottom"></td>
+          <td valign="bottom" height="14" align="right"><img src="images/roundcorner_btmright.gif" width="11" height="14" valign="bottom"></td>
+        </tr>
+      </table>
+    <td width="232" bgcolor="#FF7500" valign="top">
+    	
+      <table bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" height="400" width="100%">
+        <tr> 
+          <td valign="top" height="14" align="left"><img src="images/roundcorner_topleft.gif" width="11" height="14" border="0"></td>
+          <td valign="top" height="14" align="right"><img src="images/roundcorner_topright.gif" width="11" height="14" border="0"></td>
+        </tr>
+        <tr> 
+          <td valign="top" colspan="2" class="big2"> RECENTLY CREATED<br>
+              POSTLETS PRO<br>
+              <img src="images/rule_dot_orange_208.gif" width="208" height="2" vspace="8"><br>
+              <iframe src="includes/recentposts.html" width="200" height="310" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe><br />
+          <!-- <div class="footertext" >Listings displayed above have been upgraded to Postlets PLUS.</div><br /> -->
+          </td>
+        </tr>
+        <tr> 
+          <td valign="bottom" height="14" align="left"><img src="images/roundcorner_btmleft.gif" width="11" height="14" valign="bottom"></td>
+          <td valign="bottom" height="14" align="right"><img src="images/roundcorner_btmright.gif" width="11" height="14" valign="bottom"></td>
+        </tr>
+      </table>
+    </td>
+    </tr>
+</table>
+
+<div align="center"><a href="info/charities.php"><img src="images/charities_bnr.gif" width="728" height="45" border="0" /></a></div>
+
+<link href="../css/stylesj.css" rel="stylesheet" type="text/css" />
+<table width="728" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+	<td height="25" align="center">
+	<font color="#666666"><a href="../info/terms.php">terms of use</a> |
+	<a href="../info/privacy.php">privacy</a> | 
+        <a href="../info/fairhousing.php">fair housing</a> |
+<a href="http://blog.postlets.com/">blog</a><br>
+        </font>
+</td>
+  </tr>
+  <tr> 
+    <td align="center" class="footertext">&copy; 2010 Postlets. All rights reserved. 
+      Designated trademarks and brands are the property of their respective owners.</td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-694403-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>";}
