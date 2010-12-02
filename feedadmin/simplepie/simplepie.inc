@@ -6490,6 +6490,11 @@ class SimplePie_File
 				curl_setopt($fp, CURLOPT_REFERER, $url);
 				curl_setopt($fp, CURLOPT_USERAGENT, $useragent);
 				curl_setopt($fp, CURLOPT_HTTPHEADER, $headers2);
+				// Uncomment these lines if you are behind proxy server
+                //curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+                //curl_setopt($ch, CURLOPT_PROXY, "yyyyyy.xxx.xxx:8080"); 
+                //curl_setopt($ch, CURLOPT_PROXYPORT, 8080);
+                
 				if (!ini_get('open_basedir') && !ini_get('safe_mode') && version_compare(SimplePie_Misc::get_curl_version(), '7.15.2', '>='))
 				{
 					curl_setopt($fp, CURLOPT_FOLLOWLOCATION, 1);
