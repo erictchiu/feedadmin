@@ -132,7 +132,7 @@ function fof_render_item($item)
 ?>
 
 		<a
-			href=""
+			href="javascript:void(0);"
 			onclick="document.getElementById('addtag<?php echo $item_id ?>').style.display = '';
 					 this.style.display = 'none';
 					 return false;">
