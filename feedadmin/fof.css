@@ -39,7 +39,7 @@ p
 {
     top: 0px;
     bottom: 0px;
-    position: fixed;
+    position: absolute;
     width: 10px;
     background: grey;
     cursor: e-resize;
@@ -54,7 +54,7 @@ p
     top: 0px;
     left: 0px;
     height: 100%;
-    position: fixed;
+    position: absolute;
     overflow: scroll;
 }
 
@@ -356,7 +356,7 @@ padding: 5px 7px;
 #item-display-controls
 {
 font: normal 10px Verdana;
-position: fixed;
+position: absolute;
 top: 0;
 left: 0;
 right: 0;
