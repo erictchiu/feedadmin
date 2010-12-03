@@ -113,17 +113,26 @@ $result = fof_get_items(fof_current_user(), $_GET['feed'], $what, $_GET['when'],
 
 $first = true;
 
-foreach($result as $row)
-{
-	$item_id = $row['item_id'];
-	if($first) print "<script>firstItem = 'i$item_id'; </script>";
-	$first = false;
-	print '<div class="item shown" id="i' . $item_id . '"  onclick="return itemClicked(event)">';
-	fof_render_item($row);
-	print '</div>';
+if(count($result) != 0){
+    
+    print '<div class="items-content">';
+    print '<div class="left-content">';
+    foreach($result as $row)
+    {
+	   $item_id = $row['item_id'];
+	   if($first) print "<script>firstItem = 'i$item_id'; </script>";
+	   $first = false;
+	   print '<div class="item shown" id="i' . $item_id . '"  onclick="return itemClicked(event)">';
+	   fof_render_item($row);
+	   print '</div>';
+    }
+    print '</div>';
+    print '<div class="right-content">';
+    fof_render_tags();
+    print '</div>';
+    print '</div>';
 }
-
-if(count($result) == 0)
+else
 {
 	echo "<p><i>No items found.</i></p>";
 }

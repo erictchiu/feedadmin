@@ -174,16 +174,65 @@ body
 .item
 {
     border: 2px solid #ddd;
-    margin: 10px;
-    margin-bottom: 20px;
     clear: both;
     overflow: hidden;
+    float:left;
+    width: 99%;
 }
 
 .item.selected
 {
     border: 1px solid #888;
     background-color: #eee;
+}
+
+.items-content{
+    width:850px;
+    margin-top: 10px;
+}
+
+.left-content
+{
+    float:left;
+    width:750px;
+}
+
+.right-sub-heading
+{
+    background-color:#C3D3E4;
+    color:#003366;
+    padding:5px 10px;
+    font-size:14px;
+}
+
+.right-heading
+{
+    background-color:#336699;
+    border-bottom:1px solid #F6F7F7;
+    color:#FFFFFF;
+    font-weight:bold;
+    padding:5px 8px;
+    font-size:14px;    
+}
+
+.right-content
+{
+    float:left;
+    width:100px;
+    background-color: #ddd;
+    font-size:14px;    
+}
+
+.right-content a
+{
+    text-decoration: none;
+}
+
+.right-content ul
+{
+    list-style:none outside none;
+    margin:0;
+    padding:5px 0 5px 15px;    
 }
 
 .selected .header
