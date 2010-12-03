@@ -125,7 +125,7 @@ function fof_render_item($item)
 ?>
 		<a href='?what=<?php echo $tag ?>'><?php echo $tag ?></a>
 		
-		<a href='<?php echo $tag ?>' onclick='return remove_tag("<?php echo $item_id ?>", "<?php echo $tag ?>");'>[x]</a>
+		<a href='javascript:void(0);' onclick='return remove_tag("<?php echo $item_id ?>", "<?php echo $tag ?>");'>[x]</a>
 <?php
 		}
     }
