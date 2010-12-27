@@ -42,8 +42,9 @@ function write_html_by_tags($path, $template) {
             $server_name = $_SERVER['SERVER_NAME'];
             $user_name = $_GET['user_name'];
             $user_password = $_GET['user_password'];
+            $theme = $_GET['theme'];
             
-            $address = "http://$server_name/generator/generator.php?tag_name=$tag_name&user_name=$user_name&user_password=$user_password";
+            $address = "http://$server_name/generator/generator.php?tag_name=$tag_name&user_name=$user_name&user_password=$user_password&theme=$theme";
             
             echo $tag_name;
             echo "</br>";
@@ -84,8 +85,9 @@ if (!isset($_GET['tag_name'])) {
 } else {
   
     if (fof_authenticate($_GET["user_name"], md5($_GET['user_password'] . $_GET['user_name']))) {
-        
-        include("header.php");
+  
+        $theme = $_GET['theme'];      
+        include("$theme/header.php");
         
         $result = fof_get_items(fof_current_user(), $_GET['feed'], $_GET['tag_name'], $_GET['when'], $which, $_GET['howmany'], $order, $_GET['search']);
         
