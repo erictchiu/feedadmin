@@ -1,0 +1,862 @@
+a:2:{s:7:"headers";a:12:{s:4:"date";s:29:"Wed, 24 Nov 2010 05:43:46 GMT";s:6:"server";s:162:"Apache/2.2.9 (Ubuntu) DAV/2 SVN/1.5.1 PHP/5.2.6-2ubuntu4 with Suhosin-Patch mod_python/3.3.1 Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g mod_perl/2.0.4 Perl/v5.10.0";s:12:"x-powered-by";s:18:"PHP/5.2.6-2ubuntu4";s:4:"vary";s:22:"Cookie,Accept-Encoding";s:10:"x-pingback";s:44:"http://venturehacks.com/wordpress/xmlrpc.php";s:7:"expires";s:29:"Wed, 11 Jan 1984 05:00:00 GMT";s:13:"last-modified";s:29:"Wed, 24 Nov 2010 05:43:47 GMT";s:13:"cache-control";s:36:"no-cache, must-revalidate, max-age=0";s:6:"pragma";s:8:"no-cache";s:16:"content-encoding";s:4:"gzip";s:10:"connection";s:5:"close";s:12:"content-type";s:24:"text/html; charset=UTF-8";}s:4:"body";s:56865:"<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<!-- nivi title>Venture Hacks &#8212; Good advice for startups.</title -->
+	<title>
+	Venture Hacks &#45; Good advice for startups.	</title>
+	
+	<meta name="generator" content="WordPress 2.8.4" /> <!-- leave this for stats -->
+	
+	<link rel="stylesheet" href="http://venturehacks.com/wordpress/wp-content/themes/Cutline 1.1/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://venturehacks.com/wordpress/wp-content/themes/Cutline 1.1/custom.css" type="text/css" media="screen" />
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://venturehacks.com/wordpress/wp-content/themes/Cutline 1.1/ie7.css" media="screen" />
+	<![endif]-->
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://venturehacks.com/wordpress/wp-content/themes/Cutline 1.1/ie6.css" media="screen" />
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Venture Hacks RSS Feed" href="http://feeds.venturehacks.com/venturehacks" />
+	<link rel="pingback" href="http://venturehacks.com/wordpress/xmlrpc.php" />
+
+	<script type='text/javascript' src='http://venturehacks.com/wordpress/wp-includes/js/jquery/jquery.js?ver=1.3.2'></script>
+<script type='text/javascript' src='http://venturehacks.com/wordpress/wp-content/plugins/google-analyticator/external-tracking.min.js?ver=5.3.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://venturehacks.com/wordpress/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://venturehacks.com/wordpress/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Venture Hacks' href='http://venturehacks.com' />
+<meta name="generator" content="WordPress 2.8.4" />
+<script language="javascript" type="text/javascript">
+<!--
+		function collapseThread( theId ) {
+			var comment = document.getElementById(theId);
+			if(!comment)
+			{
+				alert("ERROR:\nThe document structure is different\nfrom what Threaded Comments expects.\nYou are missing the element '"+theId+"'");
+				return;
+			}
+			var theBody = findBody(comment);
+			if(comment.className.indexOf("collapsed") > -1) {
+				comment.className = comment.className.replace(" collapsed", "");;
+			} else {
+				comment.className += " collapsed";
+			}
+		}
+
+		function expandThread( theId ) {
+			var comment = document.getElementById(theId);
+			if(!comment)
+			{
+				alert("ERROR:\nThe document structure is different\nfrom what Threaded Comments expects.\nYou are missing the element '"+theId+"'");
+				return;
+			}
+			var theBody = findBody(comment);
+			if(comment.className.indexOf("collapsed") > -1) {
+				comment.className = comment.className.replace(" collapsed", "");;
+			} 
+		}
+		
+		function findBody(el)
+		{
+			var divs = el.getElementsByTagName("div");
+			var ret;
+			for(var i = 0; i < divs.length; ++i) {
+				if(divs.item(i).className.indexOf("body") > -1)
+					return divs.item(i);
+			}
+			return false;
+		}
+	
+		function onAddComment() {
+			//checkDocumentIntegrity();
+			var el = document.getElementById("commentform");
+			// Future release: Check if form is filled correctly and mark the form fields.
+			el.submit();
+		}
+		
+		function moveAddCommentBelow(theId, threadId, collapse)
+		{
+			expandThread( theId );
+			var addComment = document.getElementById("addcomment");
+			if(!addComment)
+			{
+			  	alert("ERROR:\nThreaded Comments can't find the 'addcomment' div.\nThis is probably because you have changed\nthe comments.php file.\nMake sure there is a tag around the form\nthat has the id 'addcomment'"); 
+				return
+			}
+			var comment = document.getElementById(theId);
+// deactivated for venturehacks.com
+//			if(collapse)
+//			{
+//				for(var i = 0; i < comment.childNodes.length; ++i) {
+//					var c = comment.childNodes.item(i);
+//					if(typeof(c.className) == "string" && c.className.indexOf("collapsed")<0) {
+//						c.className += " collapsed";
+//					}
+//				}
+//			}
+			addComment.parentNode.removeChild(addComment);
+
+			comment.appendChild(addComment);
+			if(comment.className.indexOf("alt")>-1) {
+				addComment.className = addComment.className.replace(" alt", "");					
+			} else {
+				addComment.className += " alt";
+			}
+		        var replyId = document.getElementById("comment_reply_ID");
+			if(replyId == null)
+			{
+				alert("Brians Threaded Comments Error:\nThere is no hidden form field called\n'comment_reply_ID'. This is probably because you\nchanged the comments.php file and forgot\nto include the field. Please take a look\nat the original comments.php and copy the\nform field over.");
+			}
+			replyId.value = threadId;
+			var reRootElement = document.getElementById("reroot");
+			if(reRootElement == null)
+			{
+				alert("Brians Threaded Comments Error:\nThere is no anchor tag called 'reroot' where\nthe comment form starts.\nPlease compare your comments.php to the original\ncomments.php and copy the reroot anchor tag over.");
+			}
+			reRootElement.style.display = "block";
+			var aTags = comment.getElementsByTagName("A");
+			var anc = aTags.item(0).id;
+			//document.location.href = "#"+anc;
+			document.getElementById("comment").focus();
+		}
+
+		function checkDocumentIntegrity()
+		{
+			str = "";
+			
+			str += checkElement("reroot","div tag");
+			str += checkElement("addcomment", "div tag");
+			str += checkElement("comment_reply_ID", "hidden form field");
+			str += checkElement("content", "div tag");
+			str += checkElement("comment", "textfield");
+			str += checkElement("addcommentanchor", "anchor tag");
+			
+			if(str != "")
+			{
+				str = "Brian's Threaded Comments are missing some of the elements that are required for it to function correctly.\nThis is probably the because you have changed the original comments.php that was included with the plugin.\n\nThese are the errors:\n" + str;
+				str += "\nYou should compare your comments.php with the original comments.php and make sure the required elements have not been removed.";
+
+				alert(str);
+			}
+		}
+               
+		function checkElement(theId, elDesc)
+		{
+			var el = document.getElementById(theId);
+			if(!el)
+			{
+				if(elDesc == null)
+					elDesc = "element";
+				return "- The "+elDesc+" with the ID '" +theId + "' is missing\n"; 
+			}
+			else 
+				return "";
+		}
+		
+		function reRoot()
+		{
+			var addComment = document.getElementById("addcomment");			
+			var reRootElement = document.getElementById("reroot");
+			reRootElement.style.display = "none";
+			var content = document.getElementById("comments");
+			if( !content )
+				content = document.getElementById("content");
+			if( content )
+			{
+				addComment.parentNode.removeChild(addComment);
+				content.appendChild(addComment);
+			}
+			addComment.className = addComment.className.replace(" alt", "");
+			// deactivated for venturehacks.com
+			//document.location.href = "#addcommentanchor";
+			//document.getElementById("comment").focus();				
+			document.getElementById("comment_reply_ID").value = "0";
+		}			
+		
+		function changeCommentSize(d)
+		{
+			var el = document.getElementById("comment");
+			var height = parseInt(el.style.height);
+			if(!height && el.offsetHeight)
+				height = el.offsetHeight;
+			height += d;
+			if(height < 20) 
+				height = 20;
+			el.style.height = height+"px";
+		}		
+-->
+</script>
+<style type="text/css">
+.comment 
+{
+	position: 				relative;
+	margin:					3px;
+	margin-top:				6px;
+/*	border: 				1px solid #666; */
+/*-VH padding:				4px 4px 4px 8px;*/
+/*+VH*/	padding:				20px 4px 4px 4px;
+	background-color:		#fff;
+/*+VH*/	border-top: 	1px solid #ddd;
+}
+
+.odd
+{
+	background-color: #f8f8f8;
+}
+
+.comment div {
+	position: 				relative;
+}
+
+.comment .comment img
+{
+	margin: 				0px;
+}
+
+.comment .collapseicon 
+{
+	width: 					13px;
+	height: 				13px;
+	overflow:				hidden;
+	background-image: 		url(http://venturehacks.com/wordpress/wp-content/plugins/briansthreadedcomments.php?image=subthread-open.png);
+}
+
+.collapsed .collapseicon 
+{
+	background-image: 		url(http://venturehacks.com/wordpress/wp-content/plugins/briansthreadedcomments.php?image=subthread.png);
+}
+
+
+.comment .reply {
+	text-align: 			right;
+	font-size: 				80%;
+	padding: 				0px 6px 6px 0px;
+}
+
+.comment
+{
+/*-VH	border: 	1px solid #ddd;*/
+/*+VH*/	border-left: 	1px solid #ddd;
+	margin-top: 			10px;
+}
+
+input#subscribe
+{
+	width: auto;
+}
+
+.comment .body .content
+{
+	padding:				0px 3px 0px 3px;
+	/*width: 					100%;	*/
+/*+VH*/	width: 					100%;
+	overflow: 				auto; 
+}
+
+.comment .title abbr
+{
+	border: none;
+}
+
+.collapsed .body, .collapsed .comment
+{
+	display:				none;
+}
+ 
+#commentform textarea {
+	width: 97%;
+}
+
+.btc_gravatar {
+	float: left;
+	margin: 0px 8px 4px 13px;
+}
+</style>
+
+<!-- nivi for google webmaster tools -->
+<meta name="verify-v1" content="pl+LkCgPh5ZLx4TN3hPQ3lfD2PMSU5tiQ8uVwAtmL5o=" />
+
+<!-- link rel="shortcut icon" href="http://venturehacks.com/wordpress/wp-content/themes/Cutline 1.1/favicon.ico" / -->
+
+<link rel="shortcut icon" href="http://venturehacks.com/wordpress/wp-content/themes/Cutline%201.1/favicon.ico" />
+
+</head>
+<body class="custom">
+
+<script type='text/javascript' src='http://track3.mybloglog.com/js/jsserv.php?mblID=2007040315581297'></script>
+
+<div id="container">
+
+	<div id="masthead" style="background-color:white;">
+		<!-- p id="login_register"><a href="/wordpress/wp-login.php">Login</a></p -->
+		<!-- div style="float:left;padding:5px 0 5px 10px;"><img src="/wordpress/wp-content/uploads/2007/04/vh-100.png"></div -->
+
+		<h1><img align="absbottom" width=45 src="http://venturehacks.com/wordpress/wp-content/uploads/2009/10/Peace-Logo.jpg"><a href="http://venturehacks.com">Venture Hacks</a></h1>	
+		<h3>Good advice for startups.</h3>
+		<!-- div id="disclaimer"><em><a href="/disclaimer" style="color:red;text-align:left;">Disclaimer: This is not legal advice.</a></em></div -->
+                <div class="caption" style="font-size: 9px; font-family: helvetica, arial, sans-serif; position: absolute; top: 10px; right: 63px;">
+                      SUPPORTED BY<br>
+                      <a href="http://www.kauffman.org/" title="The Kauffman Foundation" target="_blank"><img src="http://venturehacks.com/wordpress/wp-content/uploads/2010/09/KTagBlk.jpg" alt="The Kauffman Foundation" style="width: 180px;"></a>
+                </div>
+	</div>
+
+	<ul id="nav">
+		<!-- li><a class="current" href="http://venturehacks.com">Home</a></li -->
+
+		<li><a href="/products">Products</a></li>
+
+		<li><a href="http://venturehacks.com/archives">Archives</a></li>
+		<!-- nivi <li><a href="http://venturehacks.com/term-sheet-hacks">Hacks</a></li>-->
+		<!-- li><a href="http://venturehacks.com/recommended">Recommended</a></li -->
+		<li><a href="http://twitter.com/venturehacks" target="window">@venturehacks</a></li>
+		<li><a href="/bookstore">Books</a></li>
+<li><a href="http://angel.co" >AngelList</a></li>
+		<!-- li><a href="/supporters">Supporters</a></li -->
+		<li><a href="/about">About</a></li>
+		<li class="rss"><a href="http://feeds.venturehacks.com/venturehacks">RSS</a></li>
+	</ul>
+	
+	<div id="header_img">
+				<!-- nivi -->
+		<img src="http://venturehacks.com/wordpress/wp-content/themes/Cutline 1.1/images/header_1.jpg" width="770" height="0" alt="Venture Hacks header image 1" title="Venture Hacks header image 1" />
+			</div>
+	<div id="content_box">
+	
+		<div id="content" class="posts">
+<!--
+<div style='padding-top: 1em'>
+<center><iframe src="/highlights" style='border:0; border-top: 3px double #888; border-bottom: 3px double #888; height:26em; width: 43em' scrolling="no" width="450px"></iframe>
+</center>
+</div>
+-->
+<!-- div class="entry" class="highlight">
+<p align="center" class="highlight"><strong>We show you how to negotiate a great deal with investors.</strong><br />Why? <a href="/articles/term-sheet-hacks">Your investors know more than you do</a>.<br />How? <a href="/term-sheet-hacks/">Term Sheet Hacks</a>. <br />Want more? <a href="http://feeds.venturehacks.com/venturehacks">Subscribe to the feed</a>.<br />
+</p></div -->
+
+<table width="550px;" >
+<tr>
+<td width="55%">
+<div class="entry" >
+<p align="center">
+<center>
+<strong>60,000 subscribers and growing.</strong></center>
+<br />
+
+&ldquo;Excellent stuff!&rdquo; &mdash; <em><a href="http://evhead.com/2007/05/venture-hacks-make-new-board-seat-for.asp">Evan Williams</a>, Founder of <a href="http://www.twitter.com/">Twitter</a> and <a href="http://www.blogger.com">Blogger</a></em>
+<br />
+<br />
+&ldquo;A fantastic blog&hellip;&rdquo; &mdash; <em><a href="http://james.hotornot.com/2007/04/great-blog-to-read-if-you-are-thinking.html">James Hong</a>, Founder of <a href="http://www.hotornot.com/">Hot or Not</a></em><br/><a style="float:right;" href="http://venturehacks.com/about#reviews">more reviews&rarr;</a>
+
+<!-- blockquote>
+&ldquo;Much needed.&rdquo; &mdash; <em><a href="/articles/reactions#comment-52">Joe Greenstein</a>, Founder of <a href="http://www.flixster.com/">Flixster</a></em></blockquote -->
+</p><br /></div>
+</td>
+<td width="5%"></td>
+<td>
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 10,
+  interval: 15000,
+  width: 250,
+  height: 100,
+  theme: {
+    shell: {
+      background: '#c9c9c9',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#000000',
+      links: '#0062ff'
+    }
+  },
+  features: {
+    scrollbar: true,
+    loop: true,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: false,
+    behavior: 'default'
+  }
+}).render().setUser('venturehacks').start();
+</script>
+</td></tr>
+</table><br />
+
+		
+										
+			<h2><a href="http://venturehacks.com/articles/raise" rel="bookmark" title="Permanent Link to How much money should I raise?">How much money should I raise?</a></h2>
+<h4><p style="color:black;padding-bottom:2px;font-family:helvetica;font-style:normal;">by Nivi on October 27th, 2010<br /><!-- nivi &middot; --> <!-- nivi a href="http://venturehacks.com/articles/raise#comments">9 Comments</a --></h4>
+			<!-- h4>October 27th, 2010</h4 -->
+			<div class="entry">
+				<p>We get this question all the time and there&#8217;s no right answer. So I started a discussion on Quora to learn more. Here&#8217;s my <a href="http://www.quora.com/How-much-money-should-I-raise">answer</a>:</p>
+<blockquote><p>Raise <strong>less</strong> if you want to keep your valuation down and keep the option open for an early exit where everyone (investors, employees and founders) makes money.</p>
+<p>Raise <strong>more</strong> if you&#8217;re here for the long term and you want to protect your company from poor funding environments or hiccups in your growth. Just try to maintain control, monitor your liquidation preference, and monitor your dilution. Also understand that, if your valuation is high in this round, you will have to make a lot of progress for the next round to be an up round.</p>
+<p>In summary, raise too little money and you may go out of business when you run into trouble. Raise too much money and you may make less dough when you exit. Take your pick: disaster vs. dilution.</p>
+<p>In either case, try to act like you don&#8217;t have a lot of money. The conventional wisdom is that when you have a lot of money, it&#8217;s hard not to slow down because you start spending it (which takes time in and of itself) and you start thinking that you have a lot of time left before you die, so what&#8217;s the hurry?</p></blockquote>
+<p>Read the rest of my answer on <a href="http://www.quora.com/How-much-money-should-I-raise">Quora</a>. Also see this <a href="http://venturehacks.com/articles/how-much-money">old post</a> on Venture Hacks for related quotes from Eugene Kleiner, Bill Janeway, and Marc Andreeessen.</p>
+			</div>	
+
+<!-- nivi --><script src="http://feeds.feedburner.com/~s/venturehacks?i=http://venturehacks.com/articles/raise" type="text/javascript" charset="utf-8"></script>
+
+			<p class="tagged"><span class="add_comment"><a href="http://venturehacks.com/articles/raise#comments" title="Comment on How much money should I raise?">&rarr; 9 Comments</a></span><strong>Learn more about:</strong> <a href="http://venturehacks.com/topics/dilution" title="View all posts in Dilution" rel="category tag">Dilution</a> &middot;  <a href="http://venturehacks.com/topics/future-financings" title="View all posts in Future Financings" rel="category tag">Future Financings</a></p>
+			<div class="clear"></div>
+			
+											
+			<h2><a href="http://venturehacks.com/articles/real-time" rel="bookmark" title="Permanent Link to AngelList in real time">AngelList in real time</a></h2>
+<h4><p style="color:black;padding-bottom:2px;font-family:helvetica;font-style:normal;">by Nivi on October 22nd, 2010<br /><!-- nivi &middot; --> <!-- nivi a href="http://venturehacks.com/articles/real-time#comments">3 Comments</a --></h4>
+			<!-- h4>October 22nd, 2010</h4 -->
+			<div class="entry">
+				<p>There isn&#8217;t much to do on <a href="http://angel.co/">AngelList</a> if you&#8217;re not an approved angel. Startups can <a href="http://angel.co/intro">apply</a>, track some basic stats about their application and that&#8217;s about it. The angels get all the cool features for now — for example, they get a pretty nice interface for reviewing pitches that I&#8217;ll show you sometime.</p>
+<p>But until then, check out this real time feed of investor activity on the AngelList <a href="http://angel.co">home page</a>:</p>
+<p style="text-align: center;"><a href="http://angel.co"><img class="aligncenter" src="http://venturehacks.com/wordpress/wp-content/uploads/2010/10/Screen-shot-2010-10-21-at-9.40.56-AM.png" alt="" width="450" /></a></p>
+<p>When an investor takes an <em>intro</em> to a startup, <em>invests</em> in a startup, <em>shares</em> a startup, or <em>likes</em> a startup, you&#8217;ll see it on the home page. We obviously don&#8217;t display the startup&#8217;s name. And, of course, angels can go anonymous.</p>
+<p>This is the real time pulse of AngelList. We stare at it all day. It&#8217;s also a pretty nifty way for angels to get on the home page (we get requests for this all the time). So please let us know how you like it.</p>
+			</div>	
+
+<!-- nivi --><script src="http://feeds.feedburner.com/~s/venturehacks?i=http://venturehacks.com/articles/real-time" type="text/javascript" charset="utf-8"></script>
+
+			<p class="tagged"><span class="add_comment"><a href="http://venturehacks.com/articles/real-time#comments" title="Comment on AngelList in real time">&rarr; 3 Comments</a></span><strong>Learn more about:</strong> <a href="http://venturehacks.com/topics/angellist" title="View all posts in AngelList" rel="category tag">AngelList</a></p>
+			<div class="clear"></div>
+			
+											
+			<h2><a href="http://venturehacks.com/articles/appmakr" rel="bookmark" title="Permanent Link to &#8220;Intros from AngelList were responsible for 54.5% of the $1M we raised&#8221;">&#8220;Intros from AngelList were responsible for 54.5% of the $1M we raised&#8221;</a></h2>
+<h4><p style="color:black;padding-bottom:2px;font-family:helvetica;font-style:normal;">by Nivi on October 21st, 2010<br /><!-- nivi &middot; --> <!-- nivi a href="http://venturehacks.com/articles/appmakr#comments">2 Comments</a --></h4>
+			<!-- h4>October 21st, 2010</h4 -->
+			<div class="entry">
+				<p>Daniel Odio from <a href="http://www.appmakr.com/iPhone-App-Maker/">AppMakr</a> is chronicling their fundraising in a series of blog posts starting  <a href="http://www.danielodio.com/2010/10/21/fundraising-hacks-interview-with-naval-ravikant-of-angellist/">here</a>.</p>
+<p>AppMakr used <a href="http://angel.co">AngelList</a> to close <a href="http://angel.co/mkapor">Mitch Kapor</a>, a VPE at Google, <a href="http://angel.co/jberrebi">Jeremie Berrebi</a>, <a href="http://angel.co/pdova">Pietro Dova</a>, and other folks in the paperwork stage.</p>
+<p>And Daniel&#8217;s first post includes a long interview with Naval:<br />
+<center><br />
+<iframe src="http://player.vimeo.com/video/16034713" width="400" height="225" frameborder="0"></iframe><br />
+Video: <a href="http://vimeo.com/16034713">Daniel Odio interviews Naval</a> </center></p>
+<p>See Daniel&#8217;s <a href="http://www.danielodio.com/2010/10/21/fundraising-hacks-interview-with-naval-ravikant-of-angellist/">post</a> for more details and an invite to the AppMakr party on October 28th. Thanks for putting this together Daniel.</p>
+			</div>	
+
+<!-- nivi --><script src="http://feeds.feedburner.com/~s/venturehacks?i=http://venturehacks.com/articles/appmakr" type="text/javascript" charset="utf-8"></script>
+
+			<p class="tagged"><span class="add_comment"><a href="http://venturehacks.com/articles/appmakr#comments" title="Comment on &#8220;Intros from AngelList were responsible for 54.5% of the $1M we raised&#8221;">&rarr; 2 Comments</a></span><strong>Learn more about:</strong> <a href="http://venturehacks.com/topics/angellist" title="View all posts in AngelList" rel="category tag">AngelList</a></p>
+			<div class="clear"></div>
+			
+											
+			<h2><a href="http://venturehacks.com/articles/bible" rel="bookmark" title="Permanent Link to The Venture Hacks Bible">The Venture Hacks Bible</a></h2>
+<h4><p style="color:black;padding-bottom:2px;font-family:helvetica;font-style:normal;">by Nivi on October 20th, 2010<br /><!-- nivi &middot; --> <!-- nivi a href="http://venturehacks.com/articles/bible#comments">1 Comment</a --></h4>
+			<!-- h4>October 20th, 2010</h4 -->
+			<div class="entry">
+				<p><a href="http://leanpub.com/venturehacks/"><img class="right" src="http://venturehacks.com/wordpress/wp-content/uploads/2010/04/bible.png" alt="" /></a>The Venture Hacks Bible is out. Every single post in one PDF. 1400 pages. $19. Check out the <a href="http://s3.amazonaws.com/samples.leanpub.com/venturehacks-sample.pdf">free sample</a> and buy it here:</p>
+<blockquote><p><a href="http://leanpub.com/venturehacks/">Purchase The Venture Hacks Bible</a></p></blockquote>
+<p>The Bible is updated once a month and you get the updates for free. We&#8217;ve already sold about a 100 copies during the soft launch.</p>
+<p>I wondered why people would buy the Bible when you can get the same posts for free on our blog. So we surveyed our customers and here&#8217;s what they said:</p>
+<blockquote><p>&#8220;It&#8217;s easier to search.&#8221;</p>
+<p>&#8220;I can read it on the plane.&#8221;</p>
+<p>&#8220;If my computer is online, I don&#8217;t sleep.  So for me, turning that wifi switch is a big deal.  Now I can peruse/study/reference VH stuff without being online.&#8221;</p>
+<p>&#8220;Easier navigation, plus I can read it full screen like an ebook.&#8221;</p></blockquote>
+<p>File under: <em>You are not your customer.<br />
+</em><br />
+Thanks to Peter Armstrong and Scott Patten at <a href="http://leanpub.com/">Leanpub</a> for making this book happen. If you want to turn your blog into a book, get in touch with them.</p>
+<p>Check out the <a href="http://s3.amazonaws.com/samples.leanpub.com/venturehacks-sample.pdf">free sample</a> below and buy the <a href="http://leanpub.com/venturehacks/">The Venture Hacks Bible</a>.</p>
+<p><object id="doc_7037" name="doc_7037" height="600" width="100%" type="application/x-shockwave-flash" data="http://d1.scribdassets.com/ScribdViewer.swf" style="outline:none;" ><param name="movie" value="http://d1.scribdassets.com/ScribdViewer.swf"><param name="wmode" value="opaque"><param name="bgcolor" value="#ffffff"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><param name="FlashVars" value="document_id=39758327&#038;access_key=key-44f36qzosg4eijhgb74&#038;page=1&#038;viewMode=list"><embed id="doc_7037" name="doc_7037" src="http://d1.scribdassets.com/ScribdViewer.swf?document_id=39758327&#038;access_key=key-44f36qzosg4eijhgb74&#038;page=1&#038;viewMode=list" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" height="600" width="100%" wmode="opaque" bgcolor="#ffffff"></embed></object></p>
+			</div>	
+
+<!-- nivi --><script src="http://feeds.feedburner.com/~s/venturehacks?i=http://venturehacks.com/articles/bible" type="text/javascript" charset="utf-8"></script>
+
+			<p class="tagged"><span class="add_comment"><a href="http://venturehacks.com/articles/bible#comments" title="Comment on The Venture Hacks Bible">&rarr; 1 Comment</a></span><strong>Learn more about:</strong> <a href="http://venturehacks.com/topics/bible" title="View all posts in Bible" rel="category tag">Bible</a> &middot;  <a href="http://venturehacks.com/topics/launch" title="View all posts in Launch" rel="category tag">Launch</a></p>
+			<div class="clear"></div>
+			
+											
+			<h2><a href="http://venturehacks.com/articles/team-building" rel="bookmark" title="Permanent Link to Primo essay on team building">Primo essay on team building</a></h2>
+<h4><p style="color:black;padding-bottom:2px;font-family:helvetica;font-style:normal;">by Nivi on October 14th, 2010<br /><!-- nivi &middot; --> <!-- nivi a href="http://venturehacks.com/articles/team-building#comments">No Comments</a --></h4>
+			<!-- h4>October 14th, 2010</h4 -->
+			<div class="entry">
+				<p><img class="right" src="http://venturehacks.com/wordpress/wp-content/uploads/2010/10/steve1_reasonably_small.jpg" alt="" />Go read Steve<a href="http://www.blognewcomb.com/"> </a>Newcomb&#8217;s essay on building teams:</p>
+<blockquote><p><a href="http://www.blognewcomb.com/cult.html">Cult Creation</a></p></blockquote>
+<p>Steve&#8217;s the founder of Powerset. This essay is very long and very good. It&#8217;s the best article I&#8217;ve read on building teams. And team building is 10x more difficult, tedious, and important than raising money.</p>
+<p>I love/hate this essay.</p>
+<p>I love the fact that Steve is open sourcing his secrets. I hate the fact that high-quality startup advice is the exception and not the norm.</p>
+<p>I love that this essay was written in Silicon Valley. I hate that Silicon Valley dominates the world in quality startup advice.</p>
+<p>Here&#8217;s a sample from Steve&#8217;s essay:</p>
+<blockquote><p><strong>Engineers Suck at Negotiating, so Don’t Negotiate, Be Fair</strong> –from me, after being pissed off about hiring practices I experienced from bad founders.</p>
+<p>Over the years, I have noticed  some sort of weird inverse correlation between the talent an engineer has for coding and their ability to negotiate. I’ve seen people that could have hacked into NSA suddenly shit twinkies the second I bring up the topic of their salary.  I don’t exactly get it, but it’s there.</p>
+<p>Founders, on the other hand, are almost by nature programmed to negotiate everything.  In some cases, I have seen founders take advantage of engineers who don’t negotiate well, or who simply hate to negotiate so much that it’s a near-phobic experience.</p>
+<p>DO NOT DO THIS! If you do, you’re an ass-hat.</p>
+<p>Besides being unfair and a dick move, it is also stupid and even worse yet in my book &#8211; it’s illogical.</p>
+<p>What inevitably happens is that the engineers, who all have different deals, get drunk one night.  Then the shit hits the fan when they tell each other what they all make and what equity they got.  Come Monday morning, every engineer’s password is “my_founder_is_a_dick,” several viruses and backdoors are suddenly installed into the code base, and the founder gets the silent treatment &#8211; none the wiser of his impending doom.  Way to go ass-hat!</p>
+<p>If you can’t tell, this one pushes my buttons.  I don&#8217;t give a frog&#8217;s fat ass how good a negotiator an engineer is when I&#8217;m interviewing them.  I want them to have such pristine code that it makes my other engineers cry.  I want them to have a beautiful mind that can use logic and reason to solve the engineering challenges that I hand them.  It is completely irrelevant how good they are at negotiating.</p></blockquote>
+<p><a href="http://www.blognewcomb.com/cult.html">Go read the rest</a>.</p>
+			</div>	
+
+<!-- nivi --><script src="http://feeds.feedburner.com/~s/venturehacks?i=http://venturehacks.com/articles/team-building" type="text/javascript" charset="utf-8"></script>
+
+			<p class="tagged"><span class="add_comment"><a href="http://venturehacks.com/articles/team-building#respond" title="Comment on Primo essay on team building">&rarr; No Comments</a></span><strong>Learn more about:</strong> <a href="http://venturehacks.com/topics/recruiting" title="View all posts in Recruiting" rel="category tag">Recruiting</a></p>
+			<div class="clear"></div>
+			
+											
+			<h2><a href="http://venturehacks.com/articles/firehose" rel="bookmark" title="Permanent Link to Free the Firehose">Free the Firehose</a></h2>
+<h4><p style="color:black;padding-bottom:2px;font-family:helvetica;font-style:normal;">by Nivi on October 13th, 2010<br /><!-- nivi &middot; --> <!-- nivi a href="http://venturehacks.com/articles/firehose#comments">1 Comment</a --></h4>
+			<!-- h4>October 13th, 2010</h4 -->
+			<div class="entry">
+				<p style="text-align: center;"><a href="http://twitter.com/#!/albertwenger/status/26752591083"><img class="aligncenter" src="http://venturehacks.com/wordpress/wp-content/uploads/2010/10/Screen-shot-2010-10-13-at-9.57.45-AM.png" alt="" width="450" /></a></p>
+<p>That&#8217;s a tweet from <a href="http://www.google.com/search?sourceid=chrome&amp;ie=UTF-8&amp;q=albert+wenger">Albert Wenger</a> at Union Square Ventures. Thanks kindly Albert.</p>
+<p>The <strong>Firehose</strong> is a new feature on <a href="http://angel.co">AngelList</a> that gives investors unfiltered access to <em>all</em> the startups that want to meet them. Startups tell us who they want meet — if they say they want to meet Albert, they show up in Albert&#8217;s Firehose. If not, they don&#8217;t.</p>
+<p>We still go through the Firehose every day and email the best startups to the investors they want to meet. But every investor has different filters. And they want to find startups before anyone else gets their hands on them. That&#8217;s what the Firehose is for. <strong>Investors login every morning to see what&#8217;s new on AngelList</strong> (we get 10-20 new startup applications a day).</p>
+<p>We released the Firehose last week and 37 startups have already gotten intros to 12 investors like <a href="http://angel.co/thomask">Thomas Korte</a> (Heroku), <a href="http://angel.co/rbpasker">Bob Pasker</a> (Mint), <a href="http://angel.co/ori-sasson">Ori Sasson</a> (VMWare), <a href="http://angel.co/blackfish">Beau Lasky</a> (Playdom), <a href="http://angel.co/auren">Auren Hoffman</a> (Meebo), and <a href="http://angel.co/peterchane">Peter Chane</a> (iLike).</p>
+<p>That&#8217;s 37 startups that probably wouldn&#8217;t have gotten meetings with investors if they had to rely solely on the Nivi and Naval filter. There&#8217;s no reason we should be the only filters on AngelList and we&#8217;re working on ways to get the right startups into the hands of the right investors on AngelList.</p>
+<p>We&#8217;re really excited about this feature — big ups to the law offices of <a href="http://twitter.com/#!/shiftb">Leonardo</a>, <a href="http://www.google.com/search?sourceid=chrome&amp;ie=UTF-8&amp;q=josh+slayton#sclient=psy&amp;hl=en&amp;source=hp&amp;q=joshua+slayton&amp;aq=f&amp;aqi=g-sx1g1&amp;aql=&amp;oq=&amp;gs_rfai=&amp;pbx=1&amp;fp=2a733231160964be">Slayton</a>, and <a href="http://twitter.com/#!/michecapone">Capone</a> who built this bad boy.</p>
+			</div>	
+
+<!-- nivi --><script src="http://feeds.feedburner.com/~s/venturehacks?i=http://venturehacks.com/articles/firehose" type="text/javascript" charset="utf-8"></script>
+
+			<p class="tagged"><span class="add_comment"><a href="http://venturehacks.com/articles/firehose#comments" title="Comment on Free the Firehose">&rarr; 1 Comment</a></span><strong>Learn more about:</strong> <a href="http://venturehacks.com/topics/angellist" title="View all posts in AngelList" rel="category tag">AngelList</a></p>
+			<div class="clear"></div>
+			
+											
+			<h2><a href="http://venturehacks.com/articles/funded-angellist" rel="bookmark" title="Permanent Link to Which startups have been funded via AngelList?">Which startups have been funded via AngelList?</a></h2>
+<h4><p style="color:black;padding-bottom:2px;font-family:helvetica;font-style:normal;">by Nivi on October 12th, 2010<br /><!-- nivi &middot; --> <!-- nivi a href="http://venturehacks.com/articles/funded-angellist#comments">1 Comment</a --></h4>
+			<!-- h4>October 12th, 2010</h4 -->
+			<div class="entry">
+				<p>I&#8217;m working on a Quora thread called:</p>
+<blockquote><p><a href="http://www.quora.com/Which-startups-have-been-funded-via-AngelList">Which startups have been funded via AngelList?</a></p></blockquote>
+<p><a href="http://www.quora.com/Which-startups-have-been-funded-via-AngelList"></a>So far, the thread lists 27 startups that have raised money with AngelList. I think the real number is closer to 40 and I&#8217;m still prodding AngelList startups to write responses. <a href="http://www.quora.com/Which-startups-have-been-funded-via-AngelList">Check it out</a>.</p>
+<p>Quora makes it fun and easy to create quality content. But that&#8217;s not the only reason I used it. Quora lets people answer in their own words, without going through my filter. So readers get to see the raw data. And it opens us up to revision and criticism. We don&#8217;t control the environment so the data seems more authentic.</p>
+<p>I&#8217;m guessing the Quora team shudders at the thought of <a href="http://venturehacks.com/articles/quora-marketing">Quora marketing</a> (I would too) but good marketing is just good communication and education. Everyone who works on a Quora thread is driven by an incentive and talking about your product isn&#8217;t a bad one.</p>
+			</div>	
+
+<!-- nivi --><script src="http://feeds.feedburner.com/~s/venturehacks?i=http://venturehacks.com/articles/funded-angellist" type="text/javascript" charset="utf-8"></script>
+
+			<p class="tagged"><span class="add_comment"><a href="http://venturehacks.com/articles/funded-angellist#comments" title="Comment on Which startups have been funded via AngelList?">&rarr; 1 Comment</a></span><strong>Learn more about:</strong> <a href="http://venturehacks.com/topics/angellist" title="View all posts in AngelList" rel="category tag">AngelList</a></p>
+			<div class="clear"></div>
+			
+											
+			<h2><a href="http://venturehacks.com/articles/newsletter" rel="bookmark" title="Permanent Link to The Venture Hacks Newsletter is back">The Venture Hacks Newsletter is back</a></h2>
+<h4><p style="color:black;padding-bottom:2px;font-family:helvetica;font-style:normal;">by Nivi on October 11th, 2010<br /><!-- nivi &middot; --> <!-- nivi a href="http://venturehacks.com/articles/newsletter#comments">No Comments</a --></h4>
+			<!-- h4>October 11th, 2010</h4 -->
+			<div class="entry">
+				<p>The <a href="http://venturehacks.com/articles/best-advice">Venture Hacks Newsletter</a> is back baby. It&#8217;s a daily digest of our <a href="http://twitter.com/venturehacks">tweets</a> — subscribe via <a href="http://venturehacks.us1.list-manage.com/subscribe?u=36878c2ab9e43b6c36eeaf230&amp;id=4d6a109373">email</a> or <a href="http://feeds.venturehacks.com/venturehacks-twitter">RSS</a>. The email version looks pretty sweet:</p>
+<p style="text-align: center;"><img class="aligncenter" src="http://venturehacks.com/wordpress/wp-content/uploads/2010/04/digest.png" alt="" /></p>
+<p>(The newsletter was broken for a few months and we&#8217;ve finally gotten around to fixing it.)</p>
+<p>We read all the startup advice on the Web and link to the best stuff on Twitter. If you don&#8217;t want to miss a tweet, sign up for the daily digest. <a href="http://www.avc.com/a_vc/2010/04/venture-hacks-daily-newsletter.html">Fred Wilson</a> and 2000 other folks have given us permission to invade their inboxes, so it can&#8217;t be too bad.</p>
+<p>Subscribe via <a href="http://venturehacks.us1.list-manage.com/subscribe?u=36878c2ab9e43b6c36eeaf230&amp;id=4d6a109373">email</a> or <a href="http://feeds.venturehacks.com/venturehacks-twitter">RSS</a> — if you hate it, you can unsubscribe with a single click.</p>
+			</div>	
+
+<!-- nivi --><script src="http://feeds.feedburner.com/~s/venturehacks?i=http://venturehacks.com/articles/newsletter" type="text/javascript" charset="utf-8"></script>
+
+			<p class="tagged"><span class="add_comment"><a href="http://venturehacks.com/articles/newsletter#respond" title="Comment on The Venture Hacks Newsletter is back">&rarr; No Comments</a></span><strong>Learn more about:</strong> <a href="http://venturehacks.com/topics/newsletter" title="View all posts in Newsletter" rel="category tag">Newsletter</a></p>
+			<div class="clear"></div>
+			
+											
+			<h2><a href="http://venturehacks.com/articles/the-social-network" rel="bookmark" title="Permanent Link to What you can learn from The Social Network">What you can learn from The Social Network</a></h2>
+<h4><p style="color:black;padding-bottom:2px;font-family:helvetica;font-style:normal;">by Nivi on October 9th, 2010<br /><!-- nivi &middot; --> <!-- nivi a href="http://venturehacks.com/articles/the-social-network#comments">No Comments</a --></h4>
+			<!-- h4>October 9th, 2010</h4 -->
+			<div class="entry">
+				<p>I&#8217;ve been blogging a bit on Quora — here are a couple recent posts.</p>
+<p><a href="http://www.quora.com/Babak-Nivi/What-you-can-learn-from-The-Social-Network">What you can learn from The Social Network</a>:</p>
+<blockquote><p>The Social Network is an incredibly well made and motivating film.</p>
+<p>I don&#8217;t care about the facts of the matter — they&#8217;re irrelevant. The movie tells a better story about startup life than anything you&#8217;ve ever read in the press.</p>
+<p>Pretend this is a film about fictional people and a fictional product. Here are a few things you can learn:</p>
+<p><em>Facebook was built on strengths, not weaknesses</em>. Mark, Sean, and Eduardo each have their strengths. If you focus on their weaknesses, they seem like bad apples. It is their strengths that make them effective. You can only build performance on strength — you cannot build it on weakness.</p>
+<p><em>If you&#8217;re not in the room while the deal is going down, prepare to get screwed</em>. My favorite line in the movie is when Sean and Mark meet Peter Thiel for a few minutes and Peter concludes the negotiation with, &#8220;So, who is this Eduardo Saverin?&#8221;</p>
+<p><a href="http://www.quora.com/Babak-Nivi/What-you-can-learn-from-The-Social-Network">Read the rest</a>…</p></blockquote>
+<p><a href="http://www.quora.com/Babak-Nivi/Why-Cleantech-is-Boring">Why Cleantech is Boring</a>:</p>
+<blockquote><p>Cleantech is boring because it doesn&#8217;t attract product designers.</p>
+<p>Cleantech problems are engineering problems, not product problems.</p>
+<p>Here&#8217;s the product design of the best cleantech product ever: lots of clean energy in a very small space, at low cost — the end.</p>
+<p>So cleantech attracts engineers who like to solve puzzles instead of product designers who like to build things like iPads and Quoras.</p>
+<p>Right or wrong?</p></blockquote>
+<p>See my <a href="http://www.quora.com/Babak-Nivi/posts">Quora posts</a> for more masterpieces.</p>
+			</div>	
+
+<!-- nivi --><script src="http://feeds.feedburner.com/~s/venturehacks?i=http://venturehacks.com/articles/the-social-network" type="text/javascript" charset="utf-8"></script>
+
+			<p class="tagged"><span class="add_comment"><a href="http://venturehacks.com/articles/the-social-network#respond" title="Comment on What you can learn from The Social Network">&rarr; No Comments</a></span><strong>Learn more about:</strong> <a href="http://venturehacks.com/topics/quora" title="View all posts in Quora" rel="category tag">Quora</a></p>
+			<div class="clear"></div>
+			
+											
+			<h2><a href="http://venturehacks.com/articles/rise-angels" rel="bookmark" title="Permanent Link to The rise of the angels">The rise of the angels</a></h2>
+<h4><p style="color:black;padding-bottom:2px;font-family:helvetica;font-style:normal;">by Nivi on October 8th, 2010<br /><!-- nivi &middot; --> <!-- nivi a href="http://venturehacks.com/articles/rise-angels#comments">6 Comments</a --></h4>
+			<!-- h4>October 8th, 2010</h4 -->
+			<div class="entry">
+				<p>This is Naval&#8217;s keynote from <a href="http://www.capitalfactory.com/">Capital Factory</a>&#8217;s demo day. It&#8217;s called <em>The Rise of the Angels</em>, but it should be called <em>The Rise of the Entrepreneur</em>. It&#8217;s excellent.</p>
+<p><center><object width="500" height="303"><param name="movie" value="http://www.youtube.com/v/tjzDY9Z3HF0?fs=1&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/tjzDY9Z3HF0?fs=1&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="500" height="303"></embed></object></center></p>
+<p><center>Video: <a href="http://www.youtube.com/watch?v=tjzDY9Z3HF0">The rise of the angels</a></center></p>
+<p>Here are the slides. Make sure you check out Slide 8 for a draft Entrepreneur&#8217;s Bill of Rights. And Slide 20 for Naval&#8217;s prediction that spectacular fraud will occur in angel investing.</p>
+<p><center>
+<div style="width:425px" id="__ss_5244611"><object id="__sse5244611" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=theriseoftheangels-100920164850-phpapp01&#038;rel=0&#038;stripped_title=the-rise-of-the-angels-5244611&#038;userName=venturehacks" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse5244611" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=theriseoftheangels-100920164850-phpapp01&#038;rel=0&#038;stripped_title=the-rise-of-the-angels-5244611&#038;userName=venturehacks" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object></div>
+<p></center></p>
+<p><center>Slides: <a href="http://www.slideshare.net/venturehacks/the-rise-of-the-angels-5244611">The rise of the angels</a></center></p>
+<p>Some of my favorite quotes from the presentation:</p>
+<blockquote><p>The venture industry has already changed.</p>
+<p>Venture capital is a business and is open to attack by startups with disruptive new business models and technologies.</p>
+<p>Less meeting; more tweeting.
+</p></blockquote>
+<p>Thanks to <a href="http://www.google.com/search?sourceid=chrome&#038;ie=UTF-8&#038;q=joshua+baer">Joshua Baer</a> for inviting us to give the keynote.</p>
+			</div>	
+
+<!-- nivi --><script src="http://feeds.feedburner.com/~s/venturehacks?i=http://venturehacks.com/articles/rise-angels" type="text/javascript" charset="utf-8"></script>
+
+			<p class="tagged"><span class="add_comment"><a href="http://venturehacks.com/articles/rise-angels#comments" title="Comment on The rise of the angels">&rarr; 6 Comments</a></span><strong>Learn more about:</strong> <a href="http://venturehacks.com/topics/presentations" title="View all posts in Presentations" rel="category tag">Presentations</a></p>
+			<div class="clear"></div>
+			
+						
+			
+<div class="navigation">
+	<div class="previous"><a href="http://venturehacks.com/favicon.ico/page/2" >&larr; Older Articles</a></div>
+	<div class="next"></div>
+</div>
+<div class="clear flat"></div>
+
+			
+				
+		</div>
+
+		<div id="sidebar">
+	<ul class="sidebar_list">
+				<li class="widget">
+			<div id="advertisement">
+	<div class="caption">Our Ad</div>
+	      <center><script type="text/javascript" src="http://engine.influads.com/publisher/v/Css"></script></center>
+</div>
+
+<br />
+<div id="advertisement">
+	<div class="caption">Our Books</div>
+
+	<!-- a href="http://venturehacks.com/pitching"><img src="http://venturehacks.com/wordpress/wp-content/uploads/2009/02/pitching-hacks.png" /></a -->
+
+<a href="http://leanpub.com/venturehacks/"><img src="http://venturehacks.com/wordpress/wp-content/uploads/2010/04/bible.png" /></a>
+	<p>Every post in one book. Constantly updated. Check out the <a href="http://leanpub.com/samples/venturehacks-sample.pdf">free sample</a> (pdf).</p>
+<br />
+<a href="http://venturehacks.com/pitching"><img src="http://venturehacks.com/wordpress/wp-content/uploads/2009/10/pitching-hacks.png" /></a>
+	<p>Check out the <a href="http://venturehacks.com/pitching">free samples</a>.</p>
+</div>
+<!-- div id="advertisement">
+	<div class="caption">Our Spreadsheet</div>
+	
+<a href="http://venturehacks.com/articles/cap-table"><img src="http://venturehacks.com/wordpress/wp-content/uploads/2009/10/cap-table.png" /></a>
+	<p>Check out the <a href="http://venturehacks.com/articles/cap-table">video tour</a>.</p>
+</div -->
+	<!-- a href="http://crv.com" onClick="javascript: pageTracker._trackPageview('/outgoing/crv.com');"><img src="http://venturehacks.com/wordpress/wp-content/themes/Cutline 1.1/images/advertisements/crv.png" /></a>
+	<p><a href="http://crv.com" onClick="javascript: pageTracker._trackPageview('/outgoing/crv.com');">Charles River Ventures</a>: We back people who want to change the world.</p -->
+
+<!-- div id="advertisement">
+	<div class="caption"><a href="#supporter" name="supporter" style="color:black;text-decoration:none;">Supporter Posts</a></div>
+<br />
+<a href="http://walkercorporatelaw.com/blog" onClick="javascript: pageTracker._trackPageview('/outgoing/walkercorporatelaw.com/blog');"><img align=right width=50 style="padding: 0 0 0 10px" src="http://venturehacks.com/wordpress/wp-content/uploads/2010/01/walker.png" /></a>
+	<p align=left text-color="#ffffff"><a  text-color="#ffffff" href="http://walkercorporatelaw.com/blog/" onClick="javascript: pageTracker._trackPageview('/outgoing/walkercorporatelaw.com/blog');"><em>Scott Edward Walker</em></a></p>
+
+<p align=left  ><a style="font-size:12px;font-family:helvetica;font-weight:bold;" href="http://walkercorporatelaw.com/startup-issues/ask-the-attorney-founder-vesting/" onClick="javascript: pageTracker._trackPageview('/outgoing/walkercorporatelaw.com/blog');">“Ask the Attorney” – Founder Vesting</a><br />
+
+This post is part of a new series entitled “Ask the Attorney,” which I am writing for VentureBeat (one of my favorite websites for entrepreneurs).  As the VentureBeat Editor notes on the site: “Ask the Attorney is a new VentureBeat… <a href="http://walkercorporatelaw.com/startup-issues/ask-the-attorney-founder-vesting/" onClick="javascript: pageTracker._trackPageview('/outgoing/walkercorporatelaw.com/blog');">read more&rarr;</a></p>
+</div -->
+
+<!-- a href="http://www.linkedin.com/in/navalr" onClick="javascript: pageTracker._trackPageview('/outgoing/startupboy.com');"><img src="http://venturehacks.com/wordpress/wp-content/uploads/2009/09/naval.jpg" /></a>
+	<p><a href="http://www.linkedin.com/in/navalr" onClick="javascript: pageTracker._trackPageview('/outgoing/startupboy.com');">Naval Ravikant</a>: Angel investor, Venture Hacks author.</p -->
+
+
+		</li>
+		<li class="widget">
+			<h2><a href="/about">About Us</a></h2>
+<center><a href="http://www.nivi.com/"><img width=100 src="http://venturehacks.com/wordpress/wp-content/uploads/2007/04/nivi-portrait.jpg"></a><a href="http://www.startupboy.com/"><img width=100 src="http://venturehacks.com/wordpress/wp-content/uploads/2007/12/naval-portrait.jpg"></a></center><br />
+We're <a href="http://nivi.com">Nivi</a> (<a href="http://www.linkedin.com/in/bnivi">bio</a>) and <a href="http://www.startupboy.com/">Naval</a> (<a href="http://startupboy.com/about/">bio</a>). We’re founders (Epinions), investors (Twitter), students (life), and advisors (billions).<br /><br />
+Read some fun <a href="/about#reviews"> reviews of this site</a>.	</li>
+		<li class="widget">
+			<h2>Subscribe</h2>
+ <form action="http://www.feedburner.com/fb/a/emailverify" method="post" target="popupwindow" onsubmit="window.open('http://www.feedburner.com', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><a href="http://feeds.venturehacks.com/venturehacks">RSS</a> &nbsp;or &nbsp;<input type="text" style="width:100px" name="email"/><input type="hidden" value="http://feeds.feedburner.com/~e?ffid=805452" name="url"/><input type="hidden" value="Venture Hacks" name="title"/>&nbsp;<input type="submit" value="Email" /></form>
+		</li>
+
+		<li class="widget">
+			<h2>Contact</h2>
+			A poem: We read every email, but can't respond to most, or we wouldn't have time, to write a post. <a href="mailto:&#x66;&#x6f;&#x75;&#x6e;&#x64;&#x65;&#x72;&#x73;&#x40;&#x76;&#x65;&#x6e;&#x74;&#x75;&#x72;&#x65;&#x68;&#x61;&#x63;&#x6b;&#x73;&#x2e;&#x63;&#x6f;&#x6d;">&#x66;&#x6f;&#x75;&#x6e;&#x64;&#x65;&#x72;&#x73;&#x40;&#x76;&#x65;&#x6e;&#x74;&#x75;&#x72;&#x65;&#x68;&#x61;&#x63;&#x6b;&#x73;&#x2e;&#x63;&#x6f;&#x6d;</a>
+			<br />(Help requests from paying customers are answered within 24 hours.)
+		</li>
+		 
+		<li class="widget">
+			<h2><a title="popular" name="popular" href="#popular">Popular Posts</a></h2>
+			<ul class='wppp_list'>
+	<li><a href='http://venturehacks.com/angellist' title='AngelList'>AngelList</a></li>
+	<li><a href='http://venturehacks.com/archives' title='Archives'>Archives</a></li>
+	<li><a href='http://venturehacks.com/articles/cap-table' title='How to make a cap table'>How to make a cap table</a></li>
+	<li><a href='http://venturehacks.com/intro' title=''></a></li>
+	<li><a href='http://venturehacks.com/articles/sean-ellis-interview' title='How to bring a product to market / A very rare interview with Sean Ellis'>How to bring a product to market / A very rare interview with Sean Ellis</a></li>
+	<li><a href='http://venturehacks.com/articles/startuplist' title='Launch: StartupList — a new way to reach angels'>Launch: StartupList — a new way to reach angels</a></li>
+	<li><a href='http://venturehacks.com/articles/option-pool-shuffle' title='The Option Pool Shuffle'>The Option Pool Shuffle</a></li>
+	<li><a href='http://venturehacks.com/startuplist' title=''></a></li>
+</ul>
+		</li>
+		
+				<!-- ?php get_links_list('id'); ? -->
+		<!-- li class="widget">
+			<h2>Our Personal Blogs</h2>
+<ul>
+				<li><a href="http://nivi.com/blog">Nivi</a></li>
+<li><a href="http://www.startupboy.com">Naval</a></li>
+			</ul>
+		</li -->
+
+
+		<li class="widget">	
+<h2>Search</h2>		
+			<form method="get" id="search_form" action="http://venturehacks.com/">
+	<input type="text" class="search_input" value="Your search here" name="s" id="s" onfocus="if (this.value == 'Your search here') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Your search here';}" />
+	<input type="hidden" id="searchsubmit" value="Search" />
+</form>
+		</li>	
+
+
+		<li class="widget">
+			<h2><a href="http://twitter.com/venturehacks">Twitter</a></h2>
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 4,
+  interval: 6000,
+  width: 225,
+  height: 300,
+  theme: {
+    shell: {
+      background: '#a6a4a6',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#000000',
+      links: '#12a81c'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    hashtags: true,
+    timestamp: true,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('venturehacks').start();
+</script></li>
+		<li class="widget">
+			
+<script type="text/javascript" src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US"></script><script type="text/javascript">FB.init("efcf7026d2d04a215631597b77fe9e7e");</script><fb:fan profile_id="70612138702" stream="0" connections="10" width="235"></fb:fan><div style="font-size:8px; padding-left:10px"><a href="http://www.facebook.com/pages/Venture-Hacks/70612138702">Venture Hacks on Facebook</a> </div>
+</li>
+
+
+
+		<!-- li class="widget" >
+			<h2><a href="http://twitter.com/venturehacks">Twitter</a></h2>
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: 'venturehacks',
+  interval: 20000,
+  title: 'Venture Hacks on Twitter',
+subject: '',
+  width: 225,
+  height: 500,
+  theme: {
+    shell: {
+      background: '#a6a4a6',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#000000',
+      links: '#12a81c'
+    }
+  },
+  features: {
+    scrollbar: true,
+    loop: false,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: true,
+    behavior: 'all'
+  }
+}).render().start();
+</script>
+</li -->
+
+
+<div id="advertisement">
+	<div class="caption">Our Daily Newsletter</div>
+<a href="http://venturehacks.com/articles/best-advice"><img src="http://venturehacks.com/wordpress/wp-content/uploads/2009/12/startupnews.png" /></a>
+	<p>Sign up via <a href="http://eepurl.com/bf28D">email</a> or <a href="http://feeds.venturehacks.com/venturehacks-twitter">RSS</a>. <a href="http://venturehacks.com/articles/best-advice">Learn more</a>.</p>
+</div>
+<br />
+
+<div id="advertisement">
+	<div class="caption">Our Bookstore</div>
+<a href="http://venturehacks.com/bookstore/"><img src="http://venturehacks.com/wordpress/wp-content/uploads/2009/12/bookstore.png" /></a>
+	<p>See our <a href="http://venturehacks.com/bookstore">recommendations</a>.</p>
+</div>
+<br />
+
+<div id="advertisement">
+	<div class="caption">All our products</div>
+
+<a href="http://venturehacks.com/happy-meal"><img src="http://venturehacks.com/wordpress/wp-content/uploads/2009/12/happymeal.png" alt="" width="100" /></a>
+
+<p><a href="http://venturehacks.com/pitching">Pitching Hacks</a>, <a href="http://venturehacks.com/articles/cap-table">Cap Table</a>, and <a href="http://venturehacks.com/articles/co-founder-interview">Co-founder Interview</a>. <em>Save 30%</em>. <a href="http://venturehacks.com/happy-meal">Buy it here</a>.</p>
+</div>
+<br />
+
+<div id="advertisement"><em><a href="/disclaimer" style="color:red;text-align:left;size:2em;">Disclaimer: This is not legal advice.</a></em></div>
+
+	
+<!-- li class="widget">
+<script type="text/javascript" src="http://pub.mybloglog.com/comm2.php?mblID=2007040315581297&amp;c_width=180&amp;c_sn_opt=y&amp;c_rows=7&amp;c_img_size=f&amp;c_heading_text=Venture+Hacks+Community&amp;c_color_heading_bg=FF66CC&amp;c_color_heading=FFFFFF&amp;c_color_link_bg=FFFFFF&amp;c_color_link=000000&amp;c_color_bottom_bg=FF66CC"></script>
+</li -->
+
+			</ul>
+</div>
+	
+	</div>
+
+<script type="text/javascript" src="http://www.wordvu.com/js/copyvu.js?id=1_ZG1WdWRIVnlaV2hoWTJ0ekxtTnZiUT09"></script>
+
+<meta name="bitly-verification" content="029cca4f41f2">
+
+	<div id="footer">
+		<p>&copy; 2007 Venture Hacks (not including the pictures) &mdash;  <!-- nivi a href="http://venturehacks.com/sitemap/">Sitemap</a --> <a href="http://cutline.tubetorial.com/">Cutline</a> Theme by <a href="http://www.tubetorial.com">Chris Pearson</a></p>
+		<!-- Google Analytics Tracking by Google Analyticator 5.3.1: http://plugins.spiralwebconsulting.com/analyticator.html -->
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+
+	<script type="text/javascript">
+	try {
+		var pageTracker = _gat._getTracker("UA-1602828-1");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+	} catch(err) {}</script>
+			<script type="text/javascript">
+				var analyticsFileTypes = [''];
+				var analyticsEventTracking = 'enabled';
+			</script>
+			<script src="http://stats.wordpress.com/e-201047.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({blog:'10145247',v:'ext',post:'0'});
+var load_cmc = function(){linktracker_init(10145247,0,2);};
+if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+else load_cmc();
+</script>
+	</div>
+</div>
+
+<!-- nivi -->
+<script type="text/javascript" src="http://cetrk.com/pages/scripts/0004/6591.js"> </script>
+
+</body>
+</html>
+<!-- Dynamic page generated in 0.348 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2010-11-23 22:43:47 -->
+";}
