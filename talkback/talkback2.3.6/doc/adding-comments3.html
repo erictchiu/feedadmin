@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Using TalkBack with WordPress</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide</strong><br />Software version 2.3.0<br />
+	</div>
+	<div id="inner">
+	
+	<p class='center'><a href="index.html">Table of Contents</a></p>
+
+	<p>This explains how to use TalkBack for WordPress blogs instead of the built in WordPress comments system. Make a backup copy of each file before changing it.</p>
+
+	<a href='#head'>Head section entries</a><br />
+	<a href='#comments'>Adding comments to posts</a><br />
+	<a href='#transfer'>Transferring existing comments</a><br />
+	<a href='#why'>Why to use or not use TalkBack with WordPress</a><br />
+	
+	<a name='head'></a>
+	<h2>Head section entries</h2>
+	
+	<p>The head section page is the file that contains the &lt;head&gt; section HTML. In WordPress it is <code>header.php</code> in the theme directory. Find the line containing <code>&lt;?php wp_head(); ?&gt;</code>. Insert this line above it.</p>
+	<code>&lt;?php include '<span class='highlight'>relative path to TalkBack</span>/head-inc.php'; ?&gt;</code>
+    
+	 <a name='comments'></a>
+	<h2>Adding comments to posts</h2>
+
+	<p><span class='stress'>The front page template:</span></p>
+	<p>In WordPress it is <code>index.php</code> in the theme directory. Find the code that prints the comments link at the end of each post. In the default WordPress template it looks like this:</p>
+<pre>&lt;?php comments_popup_link('No Comments &amp;#187;', '1 Comment &amp;#187;', '% Comments &amp;#187;'); ?&gt;</pre>
+
+	<p>Replace it with:</p>
+	<pre>&lt;?php 
+   $tb_article_url  = "/<span class='highlight'>path to WordPress</span>/?p=$id";
+   $tb_permalink    = get_permalink();
+   tbtbget_commentsLink('No Comments &amp;#187;', '1 Comment &amp;#187;', '% Comments &amp;#187;', 'View and leave comments', '');</pre>
+	
+	<p>The first three parameters of tbtbget_commentsLink contain the link text for zero comments, one comment and two or more comments respectively. &amp;#187; causes a &raquo; character to be printed. The fourth parameter contains the link title text. The fifth parameter contains a class name if you want to style the link. </p>
+
+	<p><span class='stress'>The individual page template:</span></p>
+	
+	<p>In WordPress the template for the individual page is named <code>single.php</code> in the theme directory. Find the code that invokes printing of the comments template. In The default WordPress theme it looks like this: <code>&lt;?php comments_template(); ?&gt;</code>. Replace it with:</p>
+	<pre>&lt;?php 
+   $tb_article_url  = "/<span class='highlight'>path to WordPress</span>/?p=$id";
+   $title        = get_the_title();
+   include '<span class='highlight'>relative path to TalkBack</span>/comments.php'; 
+?&gt;</pre>
+	
+
+	 <a name='transfer'></a>
+	 <h2>Transferring existing comments</h2>
+	<p></p>
+	
+	<ol>
+	<li>Follow the above instructions before copying the comments. Make sure that TalkBack is working with your blog by entering a test comment.</li>
+
+	<li>/addons/wp-export.php will copy comments from the WordPress database to the TalkBack database. It does not delete the comments from the WordPress database.</p>
+	<p>Edit the configuration entries at the top of the script. Get the database information from the wp-config.php file in the WordPress directory.</p>
+	<pre>define('DB_NAME', 'name');          // the name of the database
+define('DB_USER', 'name');          // your MySQL username
+define('DB_PASSWORD', 'password');  // your mysql password
+define('DB_HOST', 'localhost');     // your mysql server name
+$table_prefix  = 'wp_';             // the table name prefix
+$wp_path = '/wp/';                  // path to the wordpress directory
+</pre>
+	</li>
+
+	<li>Delete all spam comments from WordPress. Approve or delete any comments awaiting moderation. Put TalkBack into maintenance mode. Backup the TalkBack database if it has non-wordpress comments in it.</li>
+	
+	<li>Upload wp-export.php to the TalkBack directory. Browse to it. </li>
+	
+	<li>When it has finished, check to be sure the comments are appearing correctly in the blog.</li>
+	<li>Delete wp-export.php from the TalkBack directory.</li>
+	</ol>
+	
+	<a name='why'></a>
+	<h2>Why to use or not use TalkBack</h2>
+	
+	<p>There are two reasons I can think of for using TalkBack with WordPress instead of it&rsquo;s built in comment system: (1) You prefer TalkBack&rsquo;s comment administration interface. (2) You have static pages as well as blog pages and you want to use only one comment administration system for all pages on your website.</p>
+
+	<p>Reasons you may not want to use TalkBack with WordPress: (1) If you delete a WordPress post, it&rsquo;s comments will remain on file in the TalkBack database unless you also delete them via the TalkBack admin panels.</p>
+	
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

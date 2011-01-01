@@ -1,0 +1,254 @@
+* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Admin panels style sheet
+	--------------------------------------------------------------------------------------------------
+	Note that a number of scripts have styles defined inside a <style> tag that override and supplement
+	styles this stylesheet:
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+body {
+	margin: 10px;
+	}
+#wrapper {
+	margin: auto;
+	font-size: 80%;
+	font-family: verdana, arial, sans-serif;
+	}
+#edit-wrapper {
+	width: 600px;
+	margin: 20px auto 0 auto;
+	}
+#maint-wrapper {
+	width: 400px;
+	margin: 20px auto 20px auto;
+	padding: 5px;
+	border: 1px solid #FEAB2B;
+	}
+#maint-wrapper .display-message{
+	padding: 10px 0 10px 0;
+	border-top: 1px solid #FEAB2B;
+	}
+#searchbox {
+	background-color: #e0e0e0;
+	padding: 5px;
+	}
+#searchbox form {
+	margin: 0;
+	}
+#searchbox input {
+	font-size: .85em; 
+	padding: 2px;
+	}
+.nav {
+	text-align: center;
+	background: #FEAB2B;
+	color: #fff;
+	}
+.nav .logo {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	text-align: left;
+	font-size: .75em;
+	}
+.admin-help-link {
+	}
+.nav .version {
+	color: #fff;
+	font-size: .75em;
+	font-weight: normal;
+	position: absolute;
+	top: 15px;
+	right: 25px;
+	text-align: right;
+	}
+.nav .panel-sitename {
+	color: #fff;
+	}
+.nav .panel-title {
+	padding: 5px 0 0 0;
+	font-weight: bold;
+	font-size: .85em;
+	color: #000;
+	}
+.nav .report-title {
+	font-weight: bold;
+	font-size: .85em;
+	color: #000;
+	}
+.nav .report-page {
+	/* see the various -tpl.php files for override styles */
+	font-size: .85em;
+	}
+.nav .stats-line {
+	margin-top: 10px;
+	}
+.nav .spam-count {
+	font-size: .85em;
+	color: #fff;
+	float: right;
+	margin: 0 15px 2px 0;
+	}
+.nav .unapproved-count {
+	font-size: .85em;
+	color: #fff;
+	float: left;
+	margin-left: 15px;
+	}
+.navbar  {
+	background: #00f;
+	clear: both;
+	}
+.navbar table {
+	width: 75%;
+	margin: auto;
+	font-size: .85em;
+	line-height: 1em;
+	color: #fff;
+	}
+.navbar td {
+	border-right: 1px solid #7F80FF;
+	padding: 2px 0 3px 0;
+	background: #00f;
+	}
+.navbar td.first{
+	border-left: 1px solid #7F80FF;
+	}
+.navbar .active {
+	color: #fff;
+	padding: 1px;
+	}
+.navbar a:link, .navbar a:visited {
+	padding: 0 3px 1px 2px;
+	color: #FFC76F;
+	}
+table {
+	width: 100%;
+	font-size: .85em;
+	}
+th {
+	background: #FFCD7F; 
+	text-align: left;
+	padding: 5px;
+	
+	}
+th.action {
+	text-align: center;
+	}
+td.action {
+	text-align: right;
+	font-size: .9em;
+	}
+tr.reply {
+	margin-left: 20px;
+	}
+.comment-header td {
+	background: #efefef;
+	padding: 5px;
+	}
+th.date, td.date {
+	}
+th.page, td.page {
+	}
+th.id, td.id {
+	width: 30px;
+	}
+th.author, td.author {
+	}
+th.website, td.website {
+	width: 200px;
+	}
+th.ip, td.ip {
+	width: 80px;
+	}
+.delete_spam {
+	text-align: right;
+	font-weight: bold;
+	padding: 5px 0 5px 0;
+	}
+.moderation-msg {
+	color: #F00;
+	}
+.moderation-msg .info{
+	color: #000;
+	}
+td span.subscribed {
+	color: red;
+	font-size: .85em;
+	}
+td.comment-text div {
+	width: 45%;
+	overflow: auto;
+	border: 1px solid #f0f0f0;
+	padding: 3px;
+	background: #fafafa;
+	float: left;
+	}
+td.reply div {
+	}
+span.reply {
+	}
+.text, td.comment-text {
+	padding: 5px;
+	}
+.text p, td.comment-text p {
+	margin: 8px 0 8px 0;
+	}
+.text pre, td.comment-text pre {
+	font-family: "courier new", courier, monospace;
+	background: #fff;
+	padding: 0 2px 0 2px;
+	overflow: auto;
+	}
+.text code, td.comment-text code {
+	font-family: "courier new", courier, monospace;
+	background: #fff;
+	}
+.text blockquote, td.comment-text blockquote {
+	border-left: 3px solid #aaa;
+	margin: 0 1.5em 0 1em;
+	padding-left: 5px;
+	}
+.text a, td.comment-text a {
+	font-weight: normal;
+	}
+	
+/* ++++++++++ Miscellaneous ++++++++++ */
+strong {font-size: .9em;}
+a:link, a:visited {
+	text-decoration: none;
+	color: #00f;
+	}
+a:hover {
+	color:#fff;
+	background: #00f;
+	}
+a.help:link, a.help:visited, a.help:hover {
+	background: url(../images/help.gif) no-repeat;
+	text-decoration: none;
+	}
+.center {
+	text-align: center;
+	}
+.right {
+	text-align: right;
+	}
+.small {
+	font-size: .85em;
+	}
+.stress {
+	color: #800;
+	}
+ul.flush, ol.flush {
+	padding: 0; 
+	margin: 0;
+	}
+ul.flush li, ol.flush li  {
+	margin: 0 0 0 15px;
+	}
+.extra-height {
+	line-height: 1.5em;
+	}
+.clear {
+	clear: both;
+	}

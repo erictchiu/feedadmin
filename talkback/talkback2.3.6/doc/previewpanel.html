@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<script type='text/javascript' src='../includes/jquery-c.js'></script>
+	<script type='text/javascript' src='../includes/thickbox.js'></script>
+	<link rel='stylesheet' type='text/css' href='../styleThickbox.css' />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<title>Fitting preview panel into your layout</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Fitting Preview Panel Into Your Layout</strong><br />
+	</div>
+	<div id="inner">
+	
+	<p class='center'><a href="index.html">Table of Contents</a></p>
+
+	<p>You can change it so that the preview panel appears with your site layout.</p>
+
+	<p>Create a new template named my-comments-preview-tpl.php. Insert your page header, sidebar and footer HTML. Then copy the below code into the template.</p>
+
+<p>In the head section of the page:</p>
+<pre>&lt;?php
+require 'head-inc.php'; 
+$separator = ($display['form_location'])  ? '&ndash;' : '';
+?&gt;</pre>
+
+<p>In the body section of the page:</p>
+<pre>&lt;?php
+print "
+&lt;div id='tb-wrapper'&gt;
+   &lt;div class='tb-comment'&gt;
+      &lt;div class='tb-comment-header'&gt; 
+         &lt;div class='tb-author-loc'&gt;
+            &lt;span class='tb-author'&gt;{$display['form_author']}&lt;/span&gt;
+            $separator 
+            &lt;span class='tb-location'&gt;{$display['form_location']}&lt;/span&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;";
+      
+      if ($config['comment_subject'])
+         // Show subject line
+         print "
+      &lt;div class='tb-comment-subject'&gt;&lt;span class='tb-subject-title'&gt;{$lang['subject']}&lt;/span&gt; {$display['form_subject']}&lt;/div&gt;";
+         
+      print "
+      &lt;div class='tb-comment-text'&gt;
+         {$display['form_textarea']}
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;br /&gt;&lt;br /&gt;";
+
+if ($_REQUEST['action'] == 'update') {
+   require 'comments-edit-form-tpl.php';
+} else {
+   include $config['comments_form_tpl'];
+}
+
+print "
+      
+&lt;/div&gt; &lt;!--end of tb-wrapper --&gt;";
+?&gt;
+
+</pre>
+
+	<p>Finally, change the preview panel file name in the admin configuration settings panel.</p>
+
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

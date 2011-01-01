@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Dates &ndash; formatting</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Dates &ndash; formatting</strong><br />
+	</div>
+	<div id="inner">
+
+<p class='center'><a href="index.html">Table of Contents</a></p>
+
+<p>The format of dates is specified by the admin_date (for admin panels) and comments_date (for comments templates) in the configuration maintenance panel. These settings contain a &ldquo;format string&rdquo; that is applied to dates. Examples:</p>
+
+<ul>
+	<li><code>%m/%d/%y - %H:%M</code> Yields output like: 11/16/06 - 15:15</li>
+	<li><code>%B %d, %Y - %H:%M</code> Yields output like: November 16, 2006 - 15:16</li>
+</ul>
+
+The following parameters may be used in the format strings on Unix type servers. Note that characters entered into the string without the preceding % will be treated as literals. For Windows servers see this <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vclib/html/_crt_strftime.2c_.wcsftime.asp" target='_blank'>
+MSDN website</a>
+
+<ul>
+<li>%a &ndash; abbreviated weekday name according to the current locale</li>
+<li>%A &ndash; full weekday name according to the current locale</li>
+<li>%b &ndash; abbreviated month name according to the current locale</li>
+<li>%B &ndash; full month name according to the current locale</li>
+<li>%c &ndash; preferred date and time representation for the current locale</li>
+<li>%C &ndash; century number (the year divided by 100 and truncated to an integer, range 00 to 99)</li>
+<li>%d &ndash; day of the month as a decimal number (range 01 to 31)</li>
+<li>%D &ndash; same as %m/%d/%y</li>
+<li>%e &ndash; day of the month as a decimal number, a single digit is preceded by a space (range ' 1' to '31')</li>
+<li>%g &ndash; like %G, but without the century.</li>
+<li>%G &ndash; The 4-digit year corresponding to the ISO week number (see %V). This has the same format and value as %Y, except that if the ISO week number belongs to the previous or next year, that year is used instead.</li>
+<li>%h &ndash; same as %b</li>
+<li>%H &ndash; hour as a decimal number using a 24-hour clock (range 00 to 23)</li>
+<li>%I &ndash; hour as a decimal number using a 12-hour clock (range 01 to 12)</li>
+<li>%j &ndash; day of the year as a decimal number (range 001 to 366)</li>
+<li>%m &ndash; month as a decimal number (range 01 to 12)</li>
+<li>%M &ndash; minute as a decimal number</li>
+<li>%n &ndash; newline character</li>
+<li>%p &ndash; either `am' or `pm' according to the given time value, or the corresponding strings for the current locale</li>
+<li>%r &ndash; time in a.m. and p.m. notation</li>
+<li>%R &ndash; time in 24 hour notation</li>
+<li>%S &ndash; second as a decimal number</li>
+<li>%t &ndash; tab character</li>
+<li>%T &ndash; current time, equal to %H:%M:%S</li>
+<li>%u &ndash; weekday as a decimal number [1,7], with 1 representing Monday</li>
+<li>%U &ndash; week number of the current year as a decimal number, starting with the first Sunday as the first day of the first week</li>
+<li>%V &ndash; The ISO 8601:1988 week number of the current year as a decimal number, range 01 to 53, where week 1 is the first week that has at least 4 days in the current year, and with Monday as the first day of the week. (Use %G or %g for the year component that corresponds to the week number for the specified timestamp.)</li>
+<li>%W &ndash; week number of the current year as a decimal number, starting with the first Monday as the first day of the first week</li>
+<li>%w &ndash; day of the week as a decimal, Sunday being 0</li>
+<li>%x &ndash; preferred date representation for the current locale without the time</li>
+<li>%X &ndash; preferred time representation for the current locale without the date</li>
+<li>%y &ndash; year as a decimal number without a century (range 00 to 99)</li>
+<li>%Y &ndash; year as a decimal number including the century</li>
+<li>%Z or %z &ndash; time zone or name or abbreviation</li>
+<li>%% &ndash; a literal '%' character</li>
+</ul>
+
+<p>Not all parameters may be supported by your system, in which case they will not be supported by PHP function used by TalkBack. Additionally, not all platforms support negative timestamps, therefore your date range may be limited to no earlier than the Unix epoch. This means, for example, %e, %T, %R and %D (there might be more) and dates prior to Jan 1, 1970 will not work on Windows, some Linux distributions, and a few other operating systems.</p>
+		
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

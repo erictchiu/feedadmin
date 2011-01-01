@@ -1,0 +1,147 @@
+body {
+	margin: 20px 0 0 0;
+	padding: 0;	
+	font-family: "lucida sans unicode", "lucida grande", verdana, helvetica, arial, sans-serif;
+	font-size: 80%;
+	background: #6F6F6F;
+	}
+#wrapper {
+	font-family: "lucida sans unicode", "lucida grande", verdana, helvetica, arial, sans-serif;
+	width: 600px;
+	margin: auto;
+	background: #fff;
+	}
+#header, #footer {
+	background: #FEAB2B;
+	text-align: center;
+	padding: 5px 10px 5px 10px;
+	}
+#subheader {
+	font-size: .85em;
+	text-align: left;
+	}
+#footer {
+	margin-top: 10px;
+	font-size: .75em;
+	color: #fff;
+	}
+#inner {
+	margin: 10px 0 10px 0;
+	padding: 0 20px 0 20px;
+	}
+h1 {
+	font-size: 1em;
+	text-align: center;
+	background: #FFCD7F;
+	}
+h2 {
+	color: #B36B00;
+	font-size: 1em;
+	}
+.section {
+	color: #B36B00;
+	}
+h3 {
+	font-size: .9em;
+	}
+ol {
+	margin-left: 20px;
+	padding: 0;
+	}
+ul {
+	margin-left: 16px;
+	padding: 0;
+	list-style-image: url(../images/bullet-square-o.gif);
+	}
+ul.nopad li {
+	padding-top: 0;
+	padding-bottom: 0;
+	}
+ul .second-level {
+	margin-left: 13px;
+	list-style-image: url(../images/bullet-arrow-o.gif);
+	}
+ul .third-level {
+	margin-left: 13px;
+	list-style-image: url(../images/bullet-circle-o.gif);
+	}
+li {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	}
+li p, li pre {
+	margin-top: 5px;
+	margin-bottom: 0;
+	}
+p.topic:first-line {
+	color: #B36B00;
+	font-weight: bold;
+	}
+pre {
+	font-family: "courier new", courier, monospace;
+	font-size: .85em;
+	background: #E6E6FA;
+	overflow: auto;
+	}
+pre.plain {
+	background: none;
+	overflow: visible;
+	}
+code {
+	font-family: "courier new", courier, monospace;
+	background: #E6E6FA;
+	font-size: .85em;
+	}
+.center {
+	text-align: center;
+	}
+.highlight {
+	background: yellow;
+	}
+.box50, .box75 {
+	font-size: .85em;
+	margin: auto;
+	padding: 5px;
+	background: #fafafa;
+	border: 1px solid #ddd;
+	}
+.box50 {width: 50%;}
+.box75 {width: 75%;}
+.notop {
+	margin-top: 0;
+	}
+.nobottom {
+	margin-bottom: 0;
+	}
+a, a:visited {
+	color: #00F;
+	text-decoration: none;
+	}
+a:hover {
+	text-decoration: underline;
+	}
+a.xlink {
+	/* external link */
+	padding-left: 10px;
+	background: url(../images/xlink.gif) no-repeat left;
+	}
+.small {font-size: .85em;}
+.xtra-height {line-height: 150%;}
+.red {color: red;}
+strong {
+	font-weight: bold;
+	font-size: .95em;
+	}
+.stress {
+	color: #FF9C00;
+	font-weight: bold;
+	font-size: .95em;
+	}
+.imgLeft {
+	margin-right: 5px; 
+	float: left;
+	}
+.imgRight {
+	margin-left: 5px; 
+	float: right;
+	}

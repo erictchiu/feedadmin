@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Comments on dynamic pages</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Comments on dynamic pages</strong><br />
+	</div>
+	<div id="inner">
+	
+	<p class='center'><a href="index.html">Table of Contents</a></p>
+	
+	<p>URL&rsquo;s for dynamic pages include a ? followed by an identification number. For example, http://somesite.com/?id=15 or http://somesite.com/?page=15 or something similar. The part of the URL beginning with the ? is used by TalkBack as its id for comment pages.</p>
+
+	<p>This type of URL is usually used by <acronym title='Content Management System'>CMS</acronym> software. If your software uses templates that allow PHP code you should be able to use TalkBack with it. If PHP code is not allowed in your templates you cannot use TalkBack.</p>
+
+	<p>Because there are many different CMS and blog software packages I cannot tell you exactly how to edit your templates. I suggest you use the <a href='adding-comments3.html'>instructions for WordPress</a> as a guide. Though your procedure will not be exactly the same, it may be similar.</p>
+	
+	<p>In the template that has the &lt;head&gt; tag, include this PHP statement: <br /><code>&lt;?php include '<span class='highlight'>relative path to TalkBack</span>/head-inc.php'; ?&gt;</code></p>
+
+	<p>In the template(s) for pages that will have comments you must insert, at the point you want comments to appear, the article url and, optionally, an article title. These are specified like, for example:</p>
+	<pre>$tb_article_url    = "/<span class='highlight'>directoryname/?id=$article_id_variable_name</span>";  
+$tb_article_title  = $tb_article_title_variable_name;
+include $_SERVER['DOCUMENT_ROOT'] . '/comments/comments.php';</pre>
+
+	<p><span class='highlight'>$article_id_variable_name</span> is the PHP variable that contains the database ID of the page.</p>
+					
+	<p>The exact characters before the = character will depend on your software. If you have not set your software to use "search engine friendly" URL's, the characters you need to enter will be in your URL's.</p>
+
+	<p>In the template(s) that list summaries of articles followed by a link to the article and its comments you need to insert, at the point you want the comments link to appear:</p>
+
+<pre>$tb_article_url  = "/<span class='highlight'>directoryname/?id=$article_id_variable_name</span>"; 
+$tb_permalink    = $tb_article_url OR $search_engine_friendly_url_variable_name;
+tbCommentsLink('No Comments', '1 Comment', '% Comments', 'View and leave comments', '');</pre>
+
+<p>That will insert a link to the article&rsquo;s page with link text of "No comments" or "1 comment" or "n comments". The fourth parameter inside the parentheses is the text for the link title attribute. The last, optional, parameter is the class that is to be assigned to the link.</p>
+
+<p>The "permalink" is the URL that to be used to access the article. It may be the same as the value in $tb_article_url or, if you are using search engine friendly URL's, it may be that URL.</p>
+	
+	<p>If you add TalkBack to your CMS website, send me the procedure you used and I will create instructions for it as I have done for WordPress.</p>
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

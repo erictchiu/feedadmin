@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<script type='text/javascript' src='../includes/jquery-c.js'></script>
+	<script type='text/javascript' src='../includes/thickbox.js'></script>
+	<link rel='stylesheet' type='text/css' href='../style.css' />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Potential lightbox conflicts</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Potential lightbox conflicts</strong><br />
+	</div>
+	<div id="inner">
+	
+	<p class='center'><a href="index.html">Table of Contents</a></p>
+	
+	<h2>Already using Thickbox?</h2>
+	
+	<p>If you are already using Thickbox you must decide which version to use: the version you have already installed or the version that came with TalkBack. The Thickbox css included with TalkBack has been slightly modified to improve the appearance of the ThickBox window.</p>
+
+	<p>If you want to use the version you have already installed, edit head-inc.php and remove or comment out the Thickbox code:</p>
+	<pre>&lt;script type='text/javascript' src='".TB_PATH."includes/jquery-c.js'&gt;&lt;/script&gt;
+&lt;script type='text/javascript' src='".TB_PATH."includes/thickbox.js'&gt;&lt;/script&gt;
+&lt;link rel='stylesheet' type='text/css' href='".TB_PATH."styleThickbox.css' /&gt;</pre>
+	
+	<p>If you want to use the version that came with TalkBack, change the paths in <strong>your</strong> HTML to point to the TalkBack versions of the CSS and javascript.</p>
+
+	<h2>Using a different lightbox?</h2>
+	
+	<p>If you are using a different lightbox implementation (Greybox, Lightbox JS, etc.), it may not coexist peacefully with ThickBox. Do a test to find out.</p>
+	
+	<p>Edit test.php. Add the HTML for your lightbox to the head section above the line:</p>
+	<code>&lt;?php include "head-inc.php"; ?&gt;</code>
+	
+	<p>In the body of the page, before the TalkBack comments.php include, enter your lightbox HTML for an image link. Browse to test.php and see if your image link works. If it does, use the &ldquo;image&rdquo; button to enter an image link into a comment. Does it work? If so, do the help buttons work? If your existing lightbox works and Thickbox works then you are in good shape.</p>
+
+	<p>If one or the other doesn&rsquo;t work, move the HTML for your lightbox to below the head-inc.php line in the head section. If it still doesn't work you must decide either to switch to ThickBox entirely for your website or disable ThickBox in TalkBack.</p>
+
+	<p>To disable ThickBox in TalkBack, comment out the head-inc.php lines as described  in &ldquo;Already using Thickbox&rdquo; above.</p>
+
+	<h2>Already using a Javascript library?</h2>
+	<p>ThickBox uses the Jquery library. If you are using a different library, e.g. Prototype JS, for other applications the two libraries may conflict if used on the same page. Do some tests to find out. If they don&rsquo;t work together and you want to have comments on a page that uses the other library, you will have to disable Thickbox as described in &ldquo;Already using Thickbox&rdquo; above.</p>
+
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>s

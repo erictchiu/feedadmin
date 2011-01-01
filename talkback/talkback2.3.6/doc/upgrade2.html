@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Upgrading TalkBack</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Upgrading</strong><br />
+	</div>
+	<div id="inner">
+
+<p class='center'><a href="index.html">Table of Contents</a></p>
+
+<p>I no longer provide a script to upgrade from version 1.x to 2.x. It was becoming too difficult to assure the accuracy of the database changes. If you want to upgrade from 1.x, post a request in the support forum and I will help you do it.</p>
+
+<p>Read the <a href='../talkback2-release-notes.html' target='_blank'>release notes</a> for the list of changes.</p>
+
+<h2>Upgrading from 2.3.10 or later to the current release</h2>
+The release notes indicate which files have changed. Upload those files.
+
+<h2>Upgrading from 2.3.beta4 through 2.3.9</h2>
+<p>Upload to your server all files except those in directories: addons, install, upgrade.</p>
+Upload dbupdate.php from the upgrade directory to the TalkBack directory and browse to it. Delete it when the script finishes finishes.
+
+<h2>If you are upgrading from version 2.3beta3 or earlier...</h2>
+
+<p>A number of changes have been made to many scripts and templates to improve security. If you have made any changes to the scripts or default templates, you will have to redo them in the new 2.3 files. You cannot mix any earlier version files with 2.3 files. Read all of the instructions before starting to upgrade.</p>
+
+<ol>
+	<li>Download a backup copy of TalkBack from your server to your PC. Backup the TalkBack database and download it to your PC.</li>
+	<li>Use the admin configuration settings panel to put TalkBack into maintenance mode.</li>
+	<li>Delete the TalkBack directory and all of its sub directories from your server.</li>
+	<li>Upload the files in all 2.3 directories except: addons, upgrade, install and language.</li>
+	<li>Upload language/english.php or the latest version of the language you are using.</li>
+	<li>If you are using any of the addon scripts, copy those from the 2.3 addons directory to the TalkBack directory on your server.</li>
+	<li>
+		In the backup copy of the config.php file that you downloaded earlier, insert above the closing <code>?&gt;</code><br />
+<pre>// Don't change below this line!!!!
+require_once 'includes/init.php';</pre>
+	</li>
+	
+	<li>From the backup copy that you downloaded earlier, upload: config.php, styleCustom.css, any customized templates and my-english.php.</li>
+	<li>
+		Upload upgrade/dbupdate.php to the talkback directory. Browse to it. When it finishes, delete the script from your server.
+
+		<h2>If you are upgrading from version 2.2.8 or earlier, continue. Otherwise skip to the last step.</h2>
+	</li>
+
+	<li>If you are using spam words filtering, rename the spamwords.php file on your server to my-spamwords.php. Check the new &ldquo;Enable spam words checking&rdquo; checkbox in admin configuration settings &ldquo;Spam and Moderation Settings.&rdquo;</li>
+
+	<li>If you have modified the default templates (comments-display-tpl.php and comments-form-tpl-php), rename those files on your server (for example to: my-comments-display-tpl.php). Then change the file names in the admin configurtion settings section &ldquo;Template File Names.&rdquo; If you have not modified them, do nothing.
+
+		<h2>If you are upgrading from version 2.1 or earlier, continue.  Otherwise skip to the last step.</h2>
+	</li>
+
+	<li>If you have done any customization other than CSS changes read about the <a href='upgrade2.2-changes.html'>script changes</a>. You will have to redo the template customizations using the new default templates as a base. It is possible that some of your customizations (such as deleting some elements from the templates) can now me made via the new configuration settings.</li>
+	
+	<li>New styles have been added to style.css. They specify the background images for Thickbox and the first page and last page links that were added to the comments template. If the path to your TalkBack directory is not <code>/talkback/</code>:
+			<ul>
+				<li>Download your styleCustom.css file from your server.</li>
+				<li>Copy the new styles (they are at the top of style.css) to your styleCustom.css file.</li>
+				<li>Change the path in the background image URL&rsquo;s in styleCustom.css.</li>
+			</ul>
+	</li>
+	
+	<li>Edit your config.php file:
+		<ul>
+			<li>Insert these lines into it:
+				<pre>$config['tb_path']     = "/<span class='highlight'>talkback</span>/";
+$config['default_language']  = "<span class='highlight'>english</span>";
+$config['message_panel_tpl'] = "message-panel.php";
+$config['admin_email']       = "<span class='highlight'>your email address</span>";</pre>
+			</li>
+			<li>Delete the <code>$config['language_file']</code> entry.</li>
+		</ul>
+	</li>
+	
+	<li>I have streamlined the insertion of the head section tags. Instead of copying the block of stylesheet and script tags into the head section of pages, you need now only insert one include statement in the head section.
+		<ul>
+			<li>Edit your pages that have comments. Replace the original TalkBack stylesheet links and script tag with:
+				<pre>&lt;?php include "<span class='highlight'>relative path</span>/head-inc.php"; ?&gt;</pre>
+				<p>The relative path is to the TalkBack directory from the directory in which your page resides. if you are using any of the optional variables ($tb_template, $tb_closed or $language) they should also be inside the PHP tag.</p>
+			</li>
+			<li>Are you already using Thickbox, Greybox, Lightbox JS, any other &ldquo;lightbox&rdquo; or javascript library other than Jquery on your website? If so, read &ldquo;Lightbox conflicts and problems&rdquo; in the user guide.</li>
+		</ul>
+	</li>
+	
+	<li>Rename the language/<code>my-language.php</code> file on your server to <code>my-english.php</code>. See the user guide &gt; About language files if you want to use multiple language files.</li>
+	
+	<li>Upload populate-counts.php (in the upgrade directory) to your TalkBack directory and browse to it. It updates a comment count field in the new articles/page table. Delete the script from your server when it has finished.</li>
+	
+	<li>Review the new configuration settings and adjust them for your installation. Edit the preview panel configuration seting: change it from comments-preview.php to comments-preview-tpl.php.
+
+	<h2>If you are upgrading from 2.0, continue. Otherwise skip to the last step:</h2></li>
+
+	<li>Edit the admin_date and comments_date configuration settings because the legal values changed in version 2.1. The old format string parameters will no longer work. The new parameters are preceded by a % sign. Read the user guide &gt; Dates - formatting for full information.</li>
+
+	<li>If your site is not in English you may want to edit the date_locale configuration setting. Read the user guide &gt; Dates - language for more information.</li>
+
+	<li>Browse the admin panels and comments pages to be sure everything looks okay. Enter some test comments and replies. Put TalkBack into operational mode if there are no problems. If you have any problems or questions, ask for help in the support forum.</li>
+
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

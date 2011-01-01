@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Procedures To Follow</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Customizing Templates - Procedures To Follow</strong><br />
+	</div>
+	<div id="inner">
+	
+	<p class='center'><a href="index.html">Table of Contents</a></p>
+
+	<p><span class='stress'>Rule number 1:</span> Don&rsquo;t open the templates in your editor and start scrolling through it much less cutting and pasting. Also important, don&rsquo;t open a template or CSS file and throw up your hands in dispair, &ldquo;Oh, it&rsquo;s all so complicated.&rdquo; <strong>Print the templates</strong>.</p>
+
+	<p><span class='stress'>Rule number 2:</span> browse to the TalkBack test page <code>http://yoursite.com/talkback/test.php</code>. Enter a comment. Enter a reply to that comment. <strong>Use your browser&rsquo;s view source command to display the HTML source code.</strong> (Firefox: Ctrl+U, Internet Explorer: View menu &gt; Source). This is the HTML code that the PHP code in the templates produces. <strong>Print the source code</strong>. It&rsquo;s easier to work with on paper.</p>
+
+	<p>The template printout shows you the combination of PHP code and HTML code that creates the HTML source code that is sent to the browser. Study and compare the two printouts and the comments page on your monitor and you will more quickly grasp what the template is doing and where in the template you will be making your change.</p>
+
+	<p>Want to change the styling: colors, backgrounds, fonts, etc? Look at the browser source code printout. Find the HTML tag for the element you want to change. It will have either an &ldquo;id&rdquo; or a &ldquo;class&rdquo;. Look for the id or class in the CSS.</p>
+
+	<p>Trial and error are great teachers. Make a backup copy of a file before changing it and you can&rsquo;t do any damage that can&rsquo;t be easily undone.</p>
+
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

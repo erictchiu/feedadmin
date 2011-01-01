@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Installing TalkBack for the first time</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Installing TalkBack for the first time</strong><br />
+	</div>
+	<div id="inner">
+
+<p class='center'><a href="index.html">Table of Contents</a></p>
+
+<p>These instructions are for a new installation.</p>
+
+<ol>
+<li>Create a mySQL database named &ldquo;talkback&rdquo; or other name of your choice. If you don&rsquo;t know how to do this contact your web host&rsquo;s technical support. The mySQL user that you assign to the database must have these permissions: SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, INDEX, DROP.</li>
+
+<li>Make a copy of style.css and name it my-styles.css. This is the file you want to change when making style changes on the comments page. This prevents style.css in any future upgrades from overriding your styles. style.css is not used by the TalkBack scripts.</li>
+
+<li>Check the URL&rsquo;s in the background styles at the top of my-styles.css. Change the path in the background URL&rsquo;s if it is not correct for your installation.</li>
+
+<li>Are you already using Thickbox, Greybox, Lightbox JS, any other &ldquo;lightbox&rdquo; or javascript library other than Jquery on your website? If so, read &ldquo;Lightbox conflicts and problems&rdquo; in the user guide.</li>
+
+<li>On your server create a directory under your web root directory named &ldquo;talkback&rdquo; or other name of your choice. Upload:
+	<ul>
+		<li>These subdirectories: admin, images, includes, install, language</li>
+		<li>All files in the TalkBack directory.</li>
+		<li>If you want to be able to browse to the user guide on your server, upload the doc directory.</li>
+		<li>If you will be using any of the addon scripts, upload them to the TalkBack directory after you have edited them.</li>
+	</ul>
+ 	<p>Change the TalkBack directory permissions temporarily to allow the installer to write the configuration file (Unix chmod 777). More information in step 7 if you can&rsquo;t change the permissions.</p>
+</li>
+
+<li>Browse to the installer at <code class='small'>http://<span class='highlight'>yoursite.com/talkback</span>/install/install.php</code>. Fill in the configuration form.</li>
+
+<li>If the installer cannot write the configuration file, create it manually. Copy the displayed configuration information, paste it into a text file named "config.php". Be sure it is <b>saved as text</b>. Then upload the file to the TalkBack directory.</li>
+
+<li>Change the TalkBack directory permissions back to what they were (usually Unix chmod 755).</li>
+
+<li>Test the installation using the demonstration script. Browse to: <code class='small'>http://<span class='highlight'>yoursite.com/talkback</span>/test.php</code>. Enter some test comments, replies and edit a comment to be sure TalkBack is working correctly.<br /><br />
+
+Then go to the admin panels <code class='small'>http://<span class='highlight'>yoursite.com/talkback</span>/admin</code> and become familiar with its features. View the admin help panels for information.
+
+<p>You may want to use the configuration maintenance panel to change some of the settings. </p>
+</li>
+
+<li><b>Delete the install directory</b>. Keeping it is a big security risk. You can always upload it later if for some reason you need to reinstall.</li>
+
+<li>Modify the CSS and/or templates and/or language file to create a look that suits you. See &ldquo;Customizing CSS&rdquo; for more information.</li>
+
+<li>To add comments to your pages see &ldquo;How to add comments to your pages&rdquo;</a>.</li>
+
+<li>If you want to use the bad words filter or spam words filters, follow the instructions at the beginning of badwords.php and spamwords.php, and enable them in the configuration settings admin panel after installation.</li>
+
+<li>
+Get a WordPress API key if you want to use the <a href="http://akismet.com/" class="xlink" target='_blank'>Akismet</a> spam checking service. For a free API key for personal, non-commercial use go to <a href="http://wordpress.com/signup/" class="xlink" target='_blank'>wordpress.com/sign up</a>. If you don&rsquo;t want a blog be sure to check the "Just a user name, please." button.
+</li>
+
+<li>Obtain reCAPTCHA keys if you want to use the captcha feature. Go to <a href='https://admin.recaptcha.net/accounts/signup/?next=%2Frecaptcha%2Fsites%2F' class="xlink" target='_blank'>reCAPTCHA signup</a>.</li>
+
+<li>A note about spam: Akismet catches most but not all of the spam. Using spamwords.php (open and read the comments) may help catch spam that Akismet misses. For my own sites I have found the best practice is to set the "Maximum number of permitted links" configuration setting to zero. Since spam comments always have at least one link, any comment with any links in the comment text will be held for your approval. I review unapproved comments daily to approve any real comments and delete spam comments.</li>
+</ol>
+
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>
