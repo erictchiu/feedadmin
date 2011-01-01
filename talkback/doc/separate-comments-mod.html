@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Separate comments modification</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Separate Comments Modification</strong><br />
+	</div>
+	<div id="inner">
+	
+	<p class='center'><a href="index.html">Table of Contents</a></p>
+	
+	<p>This modification will print the comment entry form on a separate page instead of at the bottom of the comments listing page. Copy the 2 PHP files in addons/separate-comment-mod/ to the talkback directory.</p>
+
+<p>Change the "Comments display template" entry in admin panel > maintenance >
+configuration to <code>my-comments-display-tpl.php</code>.</p>
+
+<b>comment-form.php</b><br />
+This is an example of the page on which you want the comment form to be printed.
+Either copy in your normal HTML or copy the PHP code within the body section of
+this example into a page of your choice. 
+
+
+<p><b>my-comments-display-tpl.php</b><br />
+There is one change to the standard comments-display-tpl.php. The leave a comment link has been changed to:</p>
+<pre>&lt;a href='" .TB_PATH. "comment-form.php?page={$_REQUEST['page']}'&gt;{$lang['comdisplay6']}&lt;/a&gt;.</pre>
+
+<b>When you include comments.php in your page, it should look like this:</b>
+<pre>&lt;?php
+   $_REQUEST['page'] = $_SERVER['PHP_SELF']; 
+   $_REQUEST['article_url'] = $_SERVER['PHP_SELF']; 
+   include 'comments.php'; 
+?&gt;</pre>
+
+<b>Testing</b><br />
+You can see how this works by copying the two PHP files to the TalkBack 
+directory and making the configuration change. Then browse to 
+yoursite.com/talkback/test.php
+
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

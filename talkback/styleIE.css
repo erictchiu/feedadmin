@@ -1,0 +1,9 @@
+* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   These styles make Internet Explorer for Windows display pages properly.
+   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+body {
+	/* Overcomes IE's improper use of the overflow style element - not ideal, but better than nothing */
+	word-wrap: break-word;
+	}

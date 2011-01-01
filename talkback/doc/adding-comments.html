@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Comments on static pages</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Comments on Static Pages</strong><br />
+	</div>
+	<div id="inner">
+	
+	<p class='center'><a href="index.html">Table of Contents</a></p>
+	
+	<p>A static page is one that physically exists on your website as an HTML or PHP file. The URL for the page points to a physical file.</p>
+	
+	<p class='box75'>If you are adding comments to an existing page you must change the file extension from .html to .php. Note that there is an alternative to changing the file extension. Read <a href="extensions.html" target="_blank">File Extensions</a> for more information.</p>
+	
+<h2>In the &lt;head&gt; section of your page</h2>
+
+	<p>Insert this line anywhere after the links to your stylesheet and javascript: </p>
+	<code>&lt;?php include '<span class='highlight'>path</span>/head-inc.php'; ?&gt;</code>
+
+	<p>head-inc.php contains the links to javascripts and stylesheets required by TalkBack. <span class='highlight'>path</span> is the path to your TalkBack directory from the directory in which your guestbook or comments page resides. You need to edit it and insert the actual relative or absolute path to the TalkBack directory. If you are not familiar with HTML paths, read this <a href='http://www.webdiner.com/webadv/begin/paths.htm' target='blank' class='xlink'>tutorial</a>.</p>
+
+<p>There are some optional parameters:</p>
+<pre>&lt;?php 
+   // insert these only if, for this page, you want to override the defaults
+
+   $tb_closed = '<span class='highlight'>Y</span>';         // 'Y' means no more comments can be entered for this page
+                             // empty or absent means comments are open
+   $tb_language = '<span class='highlight'>french</span>';  // overrides default language
+
+   // these override the normal templates
+   $tb_comments_display_tpl    = '<span class='highlight'>/talkback/filename.php</span>';
+   $tb_comments_form_tpl       = '<span class='highlight'>/talkback/filename.php</span>';
+   $tb_comments_preview_tpl    = '<span class='highlight'>/talkback/filename.php</span>';
+   $tb_comments_reply_tpl      = '<span class='highlight'>/talkback/filename.php</span>';
+
+   // this is used if captcha is enabled, otherwise it is ignored
+   // if absent, theme defaults to 'custom'
+   // choices are: custom, white, red, clean, blackglass
+   $tb_captcha_theme = '<span class='highlight'>white</span>';   
+
+   include '<span class='highlight'>relative path</span>/head-inc.php'; 
+?&gt;</pre>
+
+	<ul class='notop'>
+	<li><code>$captcha_theme</code> is only used if you have enabled captcha checking. In that case enter the name of the theme you want to use. The choices are: custom, red, white, clean, blackglass. Example: <code>$captcha_theme = 'custom'</code></li>
+		<li><code>$tb_closed</code> allows you to disallow any new comments for that page while still displaying existing comments. To do so, set it to: <code>$tb_closed='Y'</code></li>
+
+		<li><code>$tb_language</code> is applicable only if you have more than one language file in the language directory. See <a href='language.html'>using multiple language files</a>.</li>
+
+		<li><code>template file names</code> allow you to override the default template (as set in the configuration setting) and display a different template <strong>for this page only</strong>. Enter the path (from your root HTML directory) into the variable. Don&rsquo;t forget the first slash. Example: <code>$tb_template = '/<span class='highlight'>talkback/guestbook-tpl.php</span>'</code>
+		
+			<p>The template does not have to reside in the TalkBack directory. It can be in your web root directory or any directory beneath it. For more information about using other templates see <a href="templates.html">customizing templates</a>.</p>
+		</li>
+	</ul>
+	
+<h2>Body tag</h2>
+<p>images/wait_animation.gif is displayed when the user clicks on submit or preview. After an error or preview if the user returns to the entry page by using the browser back button, waiting.gif will still be displayed. To stop it from being displayed in those circustances insert this in your body tag: <code>&lt;body onunload="unsetWaitGif();"&gt;</code>.</p>
+
+<h2>In the &lt;body&gt; section of your page</h2>
+
+	<p>At the point in the page that you want comments to appear, insert:<br />
+	<code>&lt;?php require '<span class='highlight'>path</span>/comments.php'; ?&gt;</code></p>
+	
+	<p><b>Do not</b> use a URL. This will cause an error when a comment is submitted:<br />
+	<code>&lt;?php require 'http://yoursite.com/talkback/comments.php'; ?&gt;</code></p>
+
+	<p>If you do not know the relative path, use this:<br />
+	<code>&lt;?php include $_SERVER['DOCUMENT_ROOT'] . '/talkback/comments.php'; ?&gt;</code></p>
+
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

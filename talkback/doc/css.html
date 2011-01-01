@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Customizing CSS</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Customizing CSS</strong><br />
+	</div>
+	<div id="inner">
+	
+	<p class='center'><a href="index.html">Table of Contents</a></p>
+
+	<br />
+<a href='#help'>Before asking for help</a><br />
+<a href='#stylesheets'>Stylesheets</a><br />
+<a href='#changing'>Changing styles</a><br />
+
+<p>You should have Internet Explorer (IE6 and IE7), Firefox and Opera installed on your PC and view your changes with each of the browsers. Some style elements will yield different results on each browser and your pages may not look very good in a particular browser if you don&rsquo;t <em>tweak</em> the styles.</p>
+
+<p>After changing the stylesheet you should vaildate it at: http://jigsaw.w3.org/css-validator/ to catch any errors.</p>
+
+<a id='help'></a>
+<h2>Before asking for help</h2>
+
+<p>To find the name of a style you want to change, browse to the TalkBack test page <code>http://yoursite.com/talkback/test.php</code>. Enter a comment. Enter a reply to that comment. Copy some text from the rendered page of the element you want to change. Use your browser&rsquo;s view source command to display the HTML source code. (Firefox: Ctrl+U, Internet Explorer: View menu &gt; Source). Use the find command on the view source page to find that text. The style id or class name will be nearby.</p>
+
+<a id='stylesheets'></a>
+<h2>The Stylesheets</h2>
+
+<p><strong>my-styles.css</strong> (the file you created by copying style.css is the primary stylesheet for comments templates.</p>
+
+<p><strong>styleIE.css</strong> and  <strong>styleOpera.css</strong> contain entries that override the primary styles for those browsers.</p>
+
+<p><strong>admin/admin.css</strong> contains styles for the admin panels. But a number of the admin scripts have override and supplemental styles inside a &lt;style&gt; tag so I don&rsquo;t recommend trying to restyle the admin panels unless you have plenty of spare time. </p>
+
+<a id='changing'></a>
+<h2>Changing Styles</h2>
+
+<p>I recommend you make at least some basic changes to match the appearance of your site. Such changes would include: comment and form widths, fonts, comment header background color, form background and border colors.</p>
+
+<p>The best way to go about changing styles is to use your browser&rsquo;s menu command to view your page source. That will show you the HTML stripped of all PHP making it relatively easy to pick out the CSS id and class names for each of the page&rsquo;s HTML elements. 
+
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

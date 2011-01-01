@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<script type='text/javascript' src='../includes/jquery-c.js'></script>
+	<script type='text/javascript' src='../includes/thickbox.js'></script>
+	<link rel='stylesheet' type='text/css' href='../styleThickbox.css' />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<title>Fitting reply panel into your layout</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Fitting Reply Panel Into Your Layout</strong><br />
+	</div>
+	<div id="inner">
+	
+	<p class='center'><a href="index.html">Table of Contents</a></p>
+
+	<p>You can change it so that the reply panel appears with your site layout.</p>
+
+	<p>Create a new template named my-comments-reply-tpl.php. Insert your page header, sidebar and footer HTML. Then copy the below code into the template.</p>
+
+<p>In the head section of the page:</p>
+<pre>&lt;?php
+require 'head-inc.php'; 
+$separator = ($location[0]) ? '&ndash;' : '';
+?&gt;</pre>
+
+<p>In the body section of the page:</p>
+<pre>&lt;?php
+print "
+&lt;div id='tb-wrapper'&gt;
+    &lt;div id='ID-$tbid[0]' $comment_type_class[0]&gt;
+        &lt;div class='$header_class[0]'&gt; 
+            &lt;div class='$author_loc_class[0]'&gt;
+                &lt;span class='$author_class[0]'&gt;$author[0]&lt;/span&gt; 
+                $separator 
+                &lt;span class='$location_class[0]'&gt;$location[0]&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;!-- &lt;div class='$tbid_class[0]'&gt; &nbsp;| #$tbid[0]&lt;/div&gt;  --&gt;
+            &lt;div class='$date_class[0]'&gt;$time[0]&lt;/div&gt; 
+        &lt;/div&gt;";
+        
+        if ($config['comment_subject'])
+            // Show subject line
+            print "
+        &lt;div class='tb-comment-subject'&gt;&lt;span class='tb-subject-title'&gt;{$lang['subject']}&lt;/span&gt; $subject[0]&lt;/div&gt;";
+            
+        print "
+        &lt;div class='tb-comment-text'&gt;$text[0]&lt;/div&gt;
+    &lt;/div&gt;";
+
+
+//	+++++++++++++++++++++++++++++++++++++++++++++++
+//	Print the comments entry form
+//	+++++++++++++++++++++++++++++++++++++++++++++++
+print "
+
+	&lt;p class='tb-stress'&gt;{$lang['reply_panel_legend']} {$author[0]}&lt;/p&gt;";
+	require COMMENTS_FORM_TPL;
+
+print "
+
+&lt;/div&gt; &lt;!--end of tb-wrapper --&gt;";
+?&gt;
+</pre>
+
+	<p>Finally, change the reply panel file name in the admin configuration settings panel.</p>
+
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

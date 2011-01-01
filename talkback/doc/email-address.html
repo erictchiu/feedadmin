@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Hiding Email Address</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Hiding Email Address</strong><br />
+	</div>
+	<div id="inner">
+	
+	<p class='center'><a href="./">Table of Contents</a></p>
+
+<p>Comment author email address is required so you cannot eliminate it but you can &ldquo;force&rdquo; it to be a particular value and hide the field on the comment form.</p>
+
+<p>Copy comments-form-tpl.php to my-comments-form-tpl.php file. In the new file change:<br />
+<pre>&lt;input class='tb-field' type='text' name='form_email' value =\"{$_REQUEST['form_email']}\" maxlength='70' /&gt;
+&lt;label class='tb-required'&gt;*&lt;/label&gt;
+&lt;label class='tb-label'&gt;{$lang['comform4']}&lt;/label&gt;";&lt;/code&gt;</pre>
+<br />
+To:<br />
+<pre>&lt;input type='hidden' name='form_email' value ='nobody@nowhere.com' /&gt;</pre>
+</p>
+
+In admin panels > maintenance menu > edit configuration settings:
+
+<ul style='margin-top: 0'>
+<li>set "Show subscribe to comments line" to no</li>
+<li>change the "Comment form template" name</li>
+</ul>
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

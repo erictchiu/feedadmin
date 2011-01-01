@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Error messages</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Error messages</strong><br />
+	</div>
+	<div id="inner">
+	
+	<p class='center'><a href="index.html">Table of Contents</a></p>
+	
+
+	<p><span style='background: lightgrey'><em>Unable to process the request &lt;code&gt;</em></span> This message occurs only when certain conditions are met that can happen only if a hacker is attempting to gain access to your site by exploiting what they hope are security vunerabilities in TalkBack. You and your visitors should never see this message. If you do, something is wrong in TalkBack. Post a request for help in the support forum. Include the error message (it contains a code indicating what caused the error).
+	</p>
+	
+	<p><span style='background: lightgrey'><em>DB query error, &lt;script name and code&gt;<br />
+		mysql error:<br />
+		&lt;description of the error&gt;</em></span><br /><br />
+		
+		 Indicates that an error exists in a database query statement. This is a either a programming error or your database is corrupted. If the database is corrupted it is likely that you will get this error in a number of scripts. Please copy the message into a support forum post.</p>
+
+	<p><span style='background: lightgrey'><em>&lt;script name&gt; &lt;file name&gt;</em> not found, path to file: <em>&lt;path&gt;</em></a></span></p>
+	
+	<p>This error means that the script tried to include another script file but that file does not exist or, more likely, that the derived path to the file is incorrect. It is most likely to occur (if at all) right after installation or after you have edited one or more of the <em>Template File Names</em> configuration settings. If you have not edited the settings:</p>
+
+	<p>Create a text file called info.php. Put the following statement in it: <code>&lt;?php phpinfo(); ?></code>. Upload it to your root HTML directory. I will browse to it to discover information about your server and PHP configuration. Copy the error message and report it in the support forum. Be sure to include the URL to your comment/guest book page and the URL to your TalkBack directory.</p>
+	
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

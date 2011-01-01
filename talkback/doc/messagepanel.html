@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<script type='text/javascript' src='../includes/jquery-c.js'></script>
+	<script type='text/javascript' src='../includes/thickbox.js'></script>
+	<link rel='stylesheet' type='text/css' href='../styleThickbox.css' />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<title>Fitting Error Panel Into Your Layout</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Fitting Error Panel Into Your Layout</strong><br />
+	</div>
+	<div id="inner">
+	
+	<p class='center'><a href="index.html">Table of Contents</a></p>
+
+	<p>The default error message panel appears on a new page with a gray background. <a href='msgpanel1.png' title='Default error messag page' class='thickbox'>{example}</a></p>
+
+	<p>You can change it so that the error message page appears with your site layout. That is what I did on my scripts website. <a href='msgpanel2.png' title='Error message page afer modification' class='thickbox'>{example}</a></p>
+
+	<p>Create a new template named my-message-panel.php. Insert your page header, sidebar and footer HTML. Then copy the below code into the body section.</p>
+
+<pre>&lt;?php
+print "
+&lt;div id='tb-panel-content'&gt;
+   &lt;div id='tb-panel-message'&gt;
+      &lt;p&gt;$display_message&lt;/p&gt;
+      &lt;p&gt;$dberror&lt;/p&gt;
+      &lt;p&gt;$footnote&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class='tb-panel-link'&gt;$mc_link&lt;/div&gt;
+&lt;/div&gt;";
+exit();
+?&gt;</pre>
+
+	<p>Copy #tb-panel-content, #tb-panel-message and .tb-panel-link from style.css to styleCustom.css and change them to suit your layout.</p>
+
+	<p>Finally, change the message panel file name in the admin configuration settings panel.</p>
+
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

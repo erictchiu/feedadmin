@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Adding entries to the language file</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Adding entries to the language file</strong><br />
+	</div>
+	<div id="inner">
+	
+	<p class='center'><a href="index.html">Table of Contents</a></p>
+	
+	<p>You can add your own entries to the language file. You might do this, for example, if you are using multiple language files and want to create a customized comments template. In such a case you have multiple languages but can only put text directly into the template for one language. An example that comes to mind is a greeting in a guestbook. </p>
+
+		<blockquote>It is always nice to hear from people that have visited so leave a comment, 
+ask a question or just say hi.</blockquote>
+		
+		Normally you would place such text in your html file above the TalkBack include. Example:
+		<pre>&lt;p&gt;It is always nice to hear from people that have visited so leave a comment, 
+ask a question or just say hi.&lt;/p&gt;
+			
+&lt;?php require 'talkback/comments.php'; ?&gt;
+		</pre>
+
+		<p>That works fine for users that have a single language site. But if your site is multi-language, the greeting is not translated because it is (1) not in the language file and (2) not inside the comments template. Read on to learn how you can rectify that.</p>
+
+		<p>First, add your greeting to each override language file (e.g. my-english.php and my-dutch.php). Create an entry using an entry name that won&rsquo;t conflict with any other language file names. I suggest using the prefix &ldquo;my_&rdquo; (you can use underscores but not dashes in entry names). </p>
+
+		<pre>$lang['my_greeting'] = "It is always nice to hear from people that have visited so leave a comment, ask a question or just say hi."</pre>
+		
+		<p>Then create a custom template by copying and renaming comments-display-tpl.php (e.g. my-comments-display-tpl.php). This prevents your changes from being overwritten if you upgrade to a new version of TalkBack. Add a new paragraph at the beginning of the template. Below is the beginning of the template, before you change it:</p>
+
+		<pre>// +++++++++++++++++++++++++++++++++++++++++++++++
+// Print the "Leave a comment" link
+// +++++++++++++++++++++++++++++++++++++++++++++++
+print "
+&lt;div id='tb-wrapper'&gt;
+   &lt;p id='tb-comment-link'&gt;&lt;a href='#tb-form-div'&gt;{$lang['comdisplay6']}&lt;/a&gt;&lt;/p&gt;"; </pre>
+	
+	And here is the template after you insert your greeting paragraph:
+	
+	<pre>// +++++++++++++++++++++++++++++++++++++++++++++++
+// Print the "Leave a comment" link
+// +++++++++++++++++++++++++++++++++++++++++++++++
+print "
+&lt;div id='tb-wrapper'&gt;
+   &lt;p&gt;{$lang['my_greeting']}&lt;/p&gt;
+   &lt;p id='tb-comment-link'&gt;&lt;a href='#tb-form-div'&gt;{$lang['comdisplay6']}&lt;/a&gt;&lt;/p&gt;"; </pre>
+	
+	<p><code>{$lang['my_greeting']}</code> tells PHP to insert that entry from the language file into the output HTML. Note the beginning and ending braces. They are necessary, you will get a PHP error if you omit them. Where you place it in the template is up to you. You could also place it above the tb-wrapper div.</p>
+
+	<p>Finally, instruct TalkBack to use the new template instead of the default template. Edit the filename for &ldquo;Comments display template&rdquo; via admin configuration maintenance.</p>
+
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

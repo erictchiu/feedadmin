@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Script chanages in version 2.2</title>
+	<style type='text/css'>
+	</style>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Script chanages in version 2.2</strong><br />
+	</div>
+	<div id="inner">
+
+<p class='center'><a href="upgrade2.html">Back to Upgrade Instructions</a></p>
+
+<p>This page applies only if you are upgrading from version 2.0 or 2.1 and have customized your template files or other scripts.</p>
+
+<span class='stress'>Template changes:</span><br />
+		<div class='small' style='margin-left: 10px'>comments-display-tpl.php<br />
+		comments-edit-tpl.php<br />
+		comments-edit-form-tpl.php<br />
+		comments-form-tpl.php<br />
+		comments-preview.php<br />
+		comments-reply-tpl.php<br />
+		comments-preview.php<br />
+		comments-preview-tpl.php (added)</div>
+
+		<br />
+The following features have been added to the templates:
+	<ul class='flush notop'>
+		<li>A spam link in the comment footer that allows you to delete a comment as spam (informing Akismet of its mis-diagnosis) instead of using the delete link (which does not inform Akismet).</li>
+		<li>A location field that allows the visitor to enter their location. Can be shown or not by changing a configuration setting.</li>
+		<li>A subject field. Can be shown or not by changing a configuration setting.</li>
+		<li>The author website field in comments and on the comment entry form can be shown or not by changing a configuration setting. If it is shown, another setting controls what type of link is displayed.</li>
+		<li>The subscribe to comments radio buttons on the comment entry form can be shown or not by changing a configuration setting.</li>
+		<li>The comment reply link in the comment footer can be shown to visitors or not by changing a configuration setting. The link will be shown if your admin cookie is set so you can still enter replies.</li>
+		<li>Radio buttons on the reply form (if your admin cookie is set) that allow you to send a copy of your reply to the comment author by email. This works from both the reply link on the comment page and admin panels.</li>
+		<li>Links that allow visitors to switch between languages if there are multiple language files in the language directory.</li>
+	</ul>
+
+<p>The "action" value in the form tags has changed.</p>
+<p>In some forms in some templates, type='hidden' form input tags have been moved into the driver script and replaced with a variable (e.g. $sort_order_hidden_fields) to reduce the perceived complexity of the template. The hidden tags should never be changed by users so they were just taking up space in the templates and making the templates look more complex.</p>
+
+
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>

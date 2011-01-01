@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen"  href="doc.css" />
+	<!--[if IE]>
+		<link rel='stylesheet' type='text/css' media='screen'  href='docIE.css' />
+	<![endif]-->
+	<title>Customizing templates</title>
+</head> 
+
+<body> 
+<div id="wrapper">
+	<div id="header">
+		<strong>TalkBack User Guide<br />Customizing Templates</strong><br />
+	</div>
+	<div id="inner">
+	
+	<p class='center'><a href="./">Table of Contents</a></p>
+
+<p> If you want to change a page layout, the templates of interest are:</p>
+
+<pre style='font-size: 1em'>
+     Comments display (driver script: comments-display-prep.php)
+        comments-display-tpl.php
+        comments-form-tpl.php
+		 
+     Comment edit (driver script: comments-edit-prep.php)
+        comments-edit-tpl.php
+        comments-edit-form-tpl.php
+		
+     Comment reply (driver script: comments-reply-prep.php)
+        comments-reply-tpl.php
+        comments-form-tpl
+		
+     Comment preview: comments-preview.php
+		
+     Comment help: comments-help.php
+
+     Messages: message-panel.php
+	
+</pre>
+	
+<p>The driver scripts do not directly affect the page presentation. But in some cases they do construct some of the HTML elements used in the templates. For example, comments-display-prep.php assigns the class name to comment entries. It also creates the HTML for the reply, edit and delete links.</p>
+
+<p>Unless you are experienced in PHP programing you should not attempt to change anything in the driver scripts. Confine yourself to rearranging the placement of elements on a page and the styles used by the elements.</p>
+
+<p>Instead of changing the default templates, I recommend that you copy and rename the template. Doing so will ensure that changes you make will not be overwritten by future releases of TalkBack. Example names:</p>
+&nbsp;&nbsp;&nbsp;my-comments-display-tpl.php<br />
+&nbsp;&nbsp;&nbsp;comments-display-tpl-custom.php
+<p>Instruct the system to use the different template by changing the template file name in the configuration settings.</p>
+
+<p>Finally, document your changes. Write down in detail what you changed and keep the document in a safe place to refresh your memory in the future.</p>
+
+<p class="box75">If you are experienced with PHP and want to look "inside" TalkBack, look at comments.php. That will give you the sequence of calls for each type of action and allow you to navigate through the scripts.</p>
+
+	</div>
+	<div id="footer">Powered by <a href='http://www.scripts.oldguy.us'>TalkBack</a></div>
+</div>
+</body>
+</html>
