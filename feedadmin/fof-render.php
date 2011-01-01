@@ -125,14 +125,14 @@ function fof_render_item($item)
 ?>
 		<a href='?what=<?php echo $tag ?>'><?php echo $tag ?></a>
 		
-		<a href='<?php echo $tag ?>' onclick='return remove_tag("<?php echo $item_id ?>", "<?php echo $tag ?>");'>[x]</a>
+		<a href='javascript:void(0);' onclick='return remove_tag("<?php echo $item_id ?>", "<?php echo $tag ?>");'>[x]</a>
 <?php
 		}
     }
 ?>
 
 		<a
-			href=""
+			href="javascript:void(0);"
 			onclick="document.getElementById('addtag<?php echo $item_id ?>').style.display = '';
 					 this.style.display = 'none';
 					 return false;">
@@ -197,5 +197,37 @@ function fof_render_item($item)
 <?php } ?>
 
 <?php
+}
+
+function fof_render_tags()
+{
+    $tags = fof_get_tags(fof_current_user());
+    
+    if($tags)
+    {
+?>
+        <div class="right-sub-heading">
+            <strong><a href=".?what=all">View All</a></strong>
+        </div>
+        <div class="right-heading">Tags:</div>
+        <ul>
+        <?php
+         
+        foreach($tags as $tag)
+        {
+            $tag_name = $tag['tag_name'];
+            ?>
+            <li>
+                <a href='.?what=<?php echo $tag_name ?>'><?php echo $tag_name ?></a>
+            </li>
+            
+            <?php
+            //echo "<a href='.?what=$tag_name'><p>$tag_name</p></a>";
+            
+        }
+        ?>
+        </ul>
+
+<?php }
 }
 ?>
