@@ -6,13 +6,11 @@
  
  $fof_no_login = true;
 
-include_once("../fof-main.php");
-include_once("../fof-render.php");
- 
-if (!fof_authenticate($_GET["user_name"], md5($_GET['user_password'] . $_GET['user_name']))) {
-    echo "<strong>Authentication failed!</strong>";
-    echo "</br>";
-}
+require_once("../fof-config.php");
+require_once("../fof-db.php");
+require_once("../classes/fof-prefs.php");
+
+fof_db_connect();
 
 
 /**
@@ -25,7 +23,7 @@ if (!fof_authenticate($_GET["user_name"], md5($_GET['user_password'] . $_GET['us
 
 function write_html_by_tags($path, $template) {
     
-    $users_result = fof_safe_query("select user_id, user_name from fof_user where user_id > 1");    
+    $users_result = fof_safe_query("select user_id, user_name from fof_user");
 	
 	while($user_row = fof_db_get_row($users_result)) {
 	   
@@ -101,22 +99,243 @@ if (!isset($_GET['tag_name'])) {
     
 } else {
   
-    if (fof_authenticate($_GET["user_name"], md5($_GET['user_password'] . $_GET['user_name']))) {
-  
-        $theme = $_GET['theme'];      
-        include("$theme/header.php");
+    $theme = $_GET['theme'];      
+    include("$theme/header.php");
         
-        $result = fof_get_items($_GET['fof_user'], $_GET['feed'], $_GET['tag_name'], $_GET['when'], $which, $_GET['howmany'], $order, $_GET['search']);
+    $result = fof_get_items($_GET['fof_user'], $_GET['feed'], $_GET['tag_name'], $_GET['when'], $which, $_GET['howmany'], $order, $_GET['search']);
         
-        foreach($result as $row) {
-            fof_render_item($row);
-        }
-    
-        include("footer.php");
-        
-    } else {
-        echo "<strong>Authentication failed!</strong>";
+    foreach($result as $row) {
+        fof_render_item($row);
     }
+    include("$theme/footer.php");        
+}
+
+function fof_render_item($item)
+{
+    $items = true;
+
+	$feed_link = $item['feed_link'];
+	$feed_title = $item['feed_title'];
+	$feed_image = $item['feed_image'];
+	$feed_description = $item['feed_description'];
+
+	$item_link = $item['item_link'];
+	$item_id = $item['item_id'];
+	$item_title = $item['item_title'];
+	$item_content = $item['item_content'];
+	$item_read = $item['item_read'];
+
+	$prefs = fof_prefs();
+	$offset = $prefs['tzoffset'];
+
+	$item_published = gmdate("Y-n-d g:ia", $item['item_published'] + $offset*60*60);
+	$item_cached = gmdate("Y-n-d g:ia", $item['item_cached'] + $offset*60*60);
+	$item_updated = gmdate("Y-n-d g:ia", $item['item_updated'] + $offset*60*60);
+
+	if(!$item_title) $item_title = "[no title]";
+	
+	if($_GET['search'])
+	{
+		$item_content = do_highlight("<span>$item_content</span>", $_GET['search'], "highlight");
+		$item_title = do_highlight("<span>$item_title</span>", $_GET['search'], "highlight");
+	}
+	    
+    $tags = $item['tags'];
+
+	$star = in_array("star", $tags) ? true : false;
+	$star_image = $star ? "image/star-on.gif" : "image/star-off.gif";
+		
+	$unread = in_array("unread", $tags) ? true : false;
+?>
+
+<div class="header">
+
+	<span class="controls">
+		<a class='uparrow' href='javascript:hide_body("<?php echo $item_id ?>")'>&uarr;</a>
+		<a class='downarrow' href='javascript:show_body("<?php echo $item_id ?>")'>&darr;</a>
+		<input
+			type="checkbox"
+			name="c<?php echo $item_id ?>"
+			id="c<?php echo $item_id ?>"
+			value="checked"
+			ondblclick='flag_upto("c<?php echo $item_id?>");'
+            onclick='return checkbox(event);'
+			title='shift-click or double-click to flag all items up to this one'
+		/>
+	</span>
+	
+	<h1 <?php if($unread) echo "class='unread-item'" ?> >
+		<img
+			height="16"
+			width="16"
+			src="<?php echo $star_image ?>"
+			id="fav<?php echo $item_id ?>"
+			onclick="return toggle_favorite('<?php echo $item_id ?>')"
+		/>
+		<script>
+			document.getElementById('fav<?php echo $item_id ?>').star = <?php if($star) echo 'true'; else echo 'false'; ?>;
+		</script>
+		<a href="<?php echo $item_link ?>">
+			<?php echo $item_title ?>
+		</a>
+	</h1>
+	
+	<span class="tags">
+
+<?php
+	if($tags)
+	{
+		foreach($tags as $tag)
+		{
+			if($tag == "unread" || $tag == "star") continue;
+?>
+		<a href='?what=<?php echo $tag ?>'><?php echo $tag ?></a>
+		
+		<a href='javascript:void(0);' onclick='return remove_tag("<?php echo $item_id ?>", "<?php echo $tag ?>");'>[x]</a>
+<?php
+		}
+    }
+?>
+
+		<a
+			href="javascript:void(0);"
+			onclick="document.getElementById('addtag<?php echo $item_id ?>').style.display = '';
+					 this.style.display = 'none';
+					 return false;">
+			add tag
+		</a>
+
+		<div id="addtag<?php echo $item_id ?>" style="display: none !important">
+			<input
+				onfocus="this.value=''"
+				onkeypress="if(event.keyCode == 13) add_tag('<?php echo $item_id ?>', document.getElementById('tag<?php echo $item_id ?>').value);"
+				type="text"
+				id="tag<?php echo $item_id ?>"
+				size="12"
+				value="enter tag here"
+			>
+			<input
+				type="button"
+				name="add tag"
+				value="tag"
+				onclick="add_tag('<?php echo $item_id ?>', document.getElementById('tag<?php echo $item_id ?>').value);"
+			>
+		</div>
+
+    </span>
+    
+    <span class='dash'> - </span>
+    
+    <h2>
+
+    <?php $prefs = fof_prefs(); if($feed_image && $prefs['favicons']) { ?>
+    <a href="<?php echo $feed_link ?>" title='<?php echo $feed_description ?>'><img src="<?php echo $feed_image ?>" height="16" width="16" border="0" /></a>
+    <?php } ?>
+    <a href="<?php echo $feed_link ?>" title='<?php echo $feed_description ?>'><?php echo $feed_title ?></a>
+    </h2>
+
+	<span class="meta">on <?php echo $item_published ?></span>
+
+</div>
+
+
+<div class="body"><?php echo $item_content ?></div>
+
+<?php
+    $widgets = fof_get_widgets($item);
+    
+    if($widgets) {
+?>
+
+<div class="clearer"></div>
+
+<div class="widgets">
+
+<?php
+    foreach($widgets as $widget)
+    {
+        echo "<span class='widget'>$widget</span> ";
+    }
+?>
+
+</div>
+
+<?php } ?>
+
+<?php
+}
+
+function fof_get_widgets($item)
+{
+    return "";
+}
+
+function fof_get_tags($user_id)
+{
+    $tags = array();
+    
+    $result = fof_db_get_tags($user_id);
+    
+    $counts = fof_db_get_tag_unread($user_id);
+    
+    while($row = fof_db_get_row($result))
+    {
+        if(isset($counts[$row['tag_id']]))
+            $row['unread'] = $counts[$row['tag_id']];
+        else
+            $row['unread'] = 0;
+            
+        $tags[] = $row;
+    }
+    
+    return $tags;
+}
+
+function fof_get_items($user_id, $feed=NULL, $what="unread", $when=NULL, $start=NULL, $limit=NULL, $order="desc", $search=NULL)
+{
+   global $fof_item_filters;
+   
+   $items = fof_db_get_items($user_id, $feed, $what, $when, $start, $limit, $order, $search);
+   
+   /*for($i=0; $i<count($items); $i++)
+   {
+   	  foreach($fof_item_filters as $filter)
+   	  {
+		  $items[$i]['item_content'] = $filter($items[$i]['item_content']);
+      }
+   }*/
+   
+   return $items;
+}
+
+function fof_prefs()
+{        
+    $p =& FoF_Prefs::instance();
+    return $p->prefs;
+}
+
+function fof_multi_sort($tab,$key,$rev)
+{
+    if($rev)
+    {
+        $compare = create_function('$a,$b','if (strtolower($a["'.$key.'"]) == strtolower($b["'.$key.'"])) {return 0;}else {return (strtolower($a["'.$key.'"]) > strtolower($b["'.$key.'"])) ? -1 : 1;}');
+    }
+    else
+    {
+        $compare = create_function('$a,$b','if (strtolower($a["'.$key.'"]) == strtolower($b["'.$key.'"])) {return 0;}else {return (strtolower($a["'.$key.'"]) < strtolower($b["'.$key.'"])) ? -1 : 1;}');
+    }
+    
+    usort($tab,$compare) ;
+    return $tab ;
+}
+
+function fof_current_user()
+{   
+    return "";
+}
+
+function fof_log($message, $topic="debug")
+{
 }
 
 ?>
